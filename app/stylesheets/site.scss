@@ -1,15 +1,18 @@
 
 .container {
   background: url('/images/continuous_bg.png') repeat-y center top;
+  font-family: 'Dancing Script', arial, serif;
+  h1 {
+    font-family: 'Calligraffitti', arial, serif;
+  }
 }
 
 #header {
   height: 500px;
   background: url('/images/header_bg.png') no-repeat center top;
   text-align:center;
-  font-family: 'Dancing Script', arial, serif;
   h1 { 
-    font-family: 'Dancing Script', arial, serif;
+    font-family: 'Calligraffitti', arial, serif;
     font-size:4.5em;
     margin-top:1em;
     line-height:1.5em;

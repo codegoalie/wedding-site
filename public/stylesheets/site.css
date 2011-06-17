@@ -1,37 +1,41 @@
 /* line 2, ../../app/stylesheets/site.scss */
 .container {
   background: url("/images/continuous_bg.png") repeat-y center top;
+  font-family: 'Dancing Script', arial, serif;
+}
+/* line 5, ../../app/stylesheets/site.scss */
+.container h1 {
+  font-family: 'Calligraffitti', arial, serif;
 }
 
-/* line 6, ../../app/stylesheets/site.scss */
+/* line 10, ../../app/stylesheets/site.scss */
 #header {
   height: 500px;
   background: url("/images/header_bg.png") no-repeat center top;
   text-align: center;
-  font-family: 'Dancing Script', arial, serif;
 }
-/* line 11, ../../app/stylesheets/site.scss */
+/* line 14, ../../app/stylesheets/site.scss */
 #header h1 {
-  font-family: 'Dancing Script', arial, serif;
+  font-family: 'Calligraffitti', arial, serif;
   font-size: 4.5em;
   margin-top: 1em;
   line-height: 1.5em;
 }
 
-/* line 19, ../../app/stylesheets/site.scss */
+/* line 22, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
   height: 200px;
 }
 
-/* line 24, ../../app/stylesheets/site.scss */
+/* line 27, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
   z-index: 1;
 }
 
-/* line 30, ../../app/stylesheets/site.scss */
+/* line 33, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -50,13 +54,13 @@
   z-index: 2;
 }
 
-/* line 48, ../../app/stylesheets/site.scss */
+/* line 51, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
   z-index: 3;
 }
 
-/* line 53, ../../app/stylesheets/site.scss */
+/* line 56, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
