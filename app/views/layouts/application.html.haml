@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title rails-compass-haml-sass-scss 
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'grid.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'site.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    = csrf_meta_tag
+
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Dancing+Script&v1'
+  %body.bp
+    .container
+      #header.span-24.last
+        %h1
+          Hayley Facer & Christopher Marshall 
+          %br/
+          are
+          %br/
+          Getting Married
+      .container.span-24
+        .span-20.prepend-2.append-2
+          = yield
+      #footer.span-22.prepend-2.last
+    = javascript_include_tag 'jquery-1.6.1.min.js'
+    = yield :javascript
