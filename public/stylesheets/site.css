@@ -12,25 +12,26 @@
 }
 /* line 11, ../../app/stylesheets/site.scss */
 #header h1 {
+  font-family: 'Dancing Script', arial, serif;
   font-size: 4.5em;
   margin-top: 1em;
   line-height: 1.5em;
 }
 
-/* line 18, ../../app/stylesheets/site.scss */
+/* line 19, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
   height: 200px;
 }
 
-/* line 23, ../../app/stylesheets/site.scss */
+/* line 24, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
   z-index: 1;
 }
 
-/* line 29, ../../app/stylesheets/site.scss */
+/* line 30, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -49,13 +50,13 @@
   z-index: 2;
 }
 
-/* line 47, ../../app/stylesheets/site.scss */
+/* line 48, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
   z-index: 3;
 }
 
-/* line 52, ../../app/stylesheets/site.scss */
+/* line 53, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
