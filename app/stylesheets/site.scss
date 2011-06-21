@@ -1,9 +1,10 @@
 
 .container {
+  font-size:1.2em;
   background: url('/images/continuous_bg.png') repeat-y center top;
   font-family: 'Dancing Script', arial, serif;
   h1 {
-    font-family: 'Calligraffitti', arial, serif;
+    font-family: 'Dancing Script', arial, serif;
   }
 }
 
@@ -12,10 +13,10 @@
   background: url('/images/header_bg.png') no-repeat center top;
   text-align:center;
   h1 { 
-    font-family: 'Calligraffitti', arial, serif;
+    font-family: 'Dancing Script', arial, serif;
     font-size:4.5em;
     margin-top:1em;
-    line-height:1.5em;
+    line-height:1.2em;
   }
 }
 
