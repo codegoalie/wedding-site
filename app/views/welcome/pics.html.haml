@@ -1,0 +1,11 @@
+#gallery
+  -for img in @images
+    =image_tag "image_gallery/#{img}"
+
+= javascript_include_tag "galleria-1.2.4"
+:javascript
+  Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+  $('#gallery').galleria({
+    width:500,
+    height:500
+  });
