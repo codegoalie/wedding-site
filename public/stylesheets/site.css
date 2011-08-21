@@ -1,29 +1,90 @@
+/* line 3, ../../app/stylesheets/site.scss */
 .container {
   font-size: 1.2em;
   background: url("/images/continuous_bg.png") repeat-y center top;
-  font-family: 'Dancing Script', arial, serif; }
-  .container h1 {
-    font-family: 'Dancing Script', arial, serif; }
+  font-family: 'Marvel', arial, serif;
+}
 
+/* line 9, ../../app/stylesheets/site.scss */
 #header {
-  height: 500px;
+  height: 175px;
   background: url("/images/header_bg.png") no-repeat center top;
-  text-align: center; }
-  #header h1 {
-    font-family: 'Dancing Script', arial, serif;
-    font-size: 4.5em;
-    margin-top: 1em;
-    line-height: 1.2em; }
+  font-family: 'Marvel', arial, serif;
+}
+/* line 13, ../../app/stylesheets/site.scss */
+#header h3, #header h2 {
+  margin: 60px 12px 0px 12px;
+  line-height: 1.2em;
+}
 
+/* line 19, ../../app/stylesheets/site.scss */
+ul#top_nav {
+  position: relative;
+  padding: 0;
+  margin-left: 8px;
+  border-right: 1px solid #367cda;
+  font-family: 'Delius', arial, serif;
+}
+/* line 26, ../../app/stylesheets/site.scss */
+ul#top_nav li {
+  list-style: none;
+  font-size: 2em;
+  height: 51px;
+}
+/* line 30, ../../app/stylesheets/site.scss */
+ul#top_nav li:hover {
+  background: #367cda;
+}
+/* line 32, ../../app/stylesheets/site.scss */
+ul#top_nav li a {
+  color: #367cda;
+  padding-left: 10px;
+  display: block;
+  text-decoration: none;
+}
+/* line 34, ../../app/stylesheets/site.scss */
+ul#top_nav li a:hover {
+  color: #133665;
+}
+
+/* line 43, ../../app/stylesheets/site.scss */
+#main_content {
+  margin-top: 1em;
+}
+
+/* line 48, ../../app/stylesheets/site.scss */
+ul#news_list {
+  list-style: none;
+}
+/* line 50, ../../app/stylesheets/site.scss */
+ul#news_list li.first {
+  border-top: none;
+}
+/* line 52, ../../app/stylesheets/site.scss */
+ul#news_list li {
+  border-top: 1px solid #8cb4ea;
+  margin-top: 1em;
+}
+/* line 57, ../../app/stylesheets/site.scss */
+ul#news_list li .date {
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+/* line 64, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
-  height: 200px; }
+  height: 200px;
+}
 
+/* line 69, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
-  z-index: 1; }
+  z-index: 1;
+}
 
+/* line 75, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -39,12 +100,17 @@
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  z-index: 2; }
+  z-index: 2;
+}
 
+/* line 93, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
-  z-index: 3; }
+  z-index: 3;
+}
 
+/* line 98, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
-  filter: alpha(opacity=60); }
+  filter: alpha(opacity=60);
+}

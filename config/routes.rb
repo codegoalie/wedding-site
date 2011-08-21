@@ -1,6 +1,7 @@
 Wedding::Application.routes.draw do
   get "welcome/index"
   match '/pics' => 'welcome#pics'
+  match '/game' => 'welcome#game'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
