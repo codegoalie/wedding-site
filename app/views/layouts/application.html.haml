@@ -4,14 +4,14 @@
     %title Crayley: for officials
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'grid.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'site.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
     /[if lt IE 8]
       = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
     = csrf_meta_tag
+    = stylesheet_link_tag 'site.css', :media => 'screen, projection'
 
-    -#= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Dancing+Script&v1'
-    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Marvel'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Sunshiney'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Montez'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Delius'
 
     =yield :header

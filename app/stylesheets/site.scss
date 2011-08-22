@@ -3,13 +3,13 @@ $blue_ribbon:#367cda;
 .container {
   font-size:1.2em;
   background: url('/images/continuous_bg.png') repeat-y center top;
-  font-family: 'Marvel', arial, serif;
+  font-family: 'Montez', serif;
 }
 
 #header {
   height: 175px;
   background: url('/images/header_bg.png') no-repeat center top;
-  font-family: 'Marvel', arial, serif;
+  font-family: 'Montez', arial, serif;
   h3, h2 { 
     margin:60px 12px 0px 12px;
     line-height:1.2em;
@@ -42,6 +42,7 @@ ul#top_nav
 #main_content
 {
   margin-top:1em;
+  font-size:18pt;
 }
 
 ul#news_list
@@ -56,7 +57,7 @@ ul#news_list
   li .date 
   {
     font-weight:bold;
-    margin-bottom:.5em;
+    /* margin-bottom:.5em;*/
   }
 
 }

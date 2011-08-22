@@ -2,14 +2,14 @@
 .container {
   font-size: 1.2em;
   background: url("/images/continuous_bg.png") repeat-y center top;
-  font-family: 'Marvel', arial, serif;
+  font-family: 'Montez', serif;
 }
 
 /* line 9, ../../app/stylesheets/site.scss */
 #header {
   height: 175px;
   background: url("/images/header_bg.png") no-repeat center top;
-  font-family: 'Marvel', arial, serif;
+  font-family: 'Montez', arial, serif;
 }
 /* line 13, ../../app/stylesheets/site.scss */
 #header h3, #header h2 {
@@ -50,41 +50,42 @@ ul#top_nav li a:hover {
 /* line 43, ../../app/stylesheets/site.scss */
 #main_content {
   margin-top: 1em;
+  font-size: 18pt;
 }
 
-/* line 48, ../../app/stylesheets/site.scss */
+/* line 49, ../../app/stylesheets/site.scss */
 ul#news_list {
   list-style: none;
 }
-/* line 50, ../../app/stylesheets/site.scss */
+/* line 51, ../../app/stylesheets/site.scss */
 ul#news_list li.first {
   border-top: none;
 }
-/* line 52, ../../app/stylesheets/site.scss */
+/* line 53, ../../app/stylesheets/site.scss */
 ul#news_list li {
   border-top: 1px solid #8cb4ea;
   margin-top: 1em;
 }
-/* line 57, ../../app/stylesheets/site.scss */
+/* line 58, ../../app/stylesheets/site.scss */
 ul#news_list li .date {
   font-weight: bold;
-  margin-bottom: .5em;
+  /* margin-bottom:.5em;*/
 }
 
-/* line 64, ../../app/stylesheets/site.scss */
+/* line 65, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
   height: 200px;
 }
 
-/* line 69, ../../app/stylesheets/site.scss */
+/* line 70, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
   z-index: 1;
 }
 
-/* line 75, ../../app/stylesheets/site.scss */
+/* line 76, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -103,13 +104,13 @@ ul#news_list li .date {
   z-index: 2;
 }
 
-/* line 93, ../../app/stylesheets/site.scss */
+/* line 94, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
   z-index: 3;
 }
 
-/* line 98, ../../app/stylesheets/site.scss */
+/* line 99, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
