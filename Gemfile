@@ -11,6 +11,8 @@ gem 'compass', '0.10.6'
 gem 'haml', '3.0.24'
 gem 'sass'
 
+gem 'devise'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
