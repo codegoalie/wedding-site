@@ -32,7 +32,7 @@ ul#top_nav
     { 
       color:$blue_ribbon;
       &:hover { color: darken($blue_ribbon, 30%); }
-      padding-left:10px;
+      padding-left:8px;
       display:block; 
       text-decoration:none;
     }

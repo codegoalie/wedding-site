@@ -1,0 +1,18 @@
+%p
+  =link_to "New Guest", new_guest_path
+
+%h5 
+  Total Guests:
+  %span.bold= @total_guests
+%table
+  %thead
+    %th Name
+    %th Location
+    %th Count
+  %tbody
+  -@guests.each do |guest|
+    %tr
+      %td= guest.name
+      %td #{guest.city}, #{guest.state}
+      %td= guest.count
+

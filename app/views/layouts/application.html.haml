@@ -1,7 +1,11 @@
 !!!
 %html
   %head
-    %title Crayley: for officials
+    %title 
+      -if @title
+        =@title
+        |
+      Crayley: for officials
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'grid.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
@@ -21,15 +25,24 @@
         %h2{ :style => "float:left;"}
           Hayley Facer & Christopher Marshall 
         %h3{ :style => "float:right;"}
-          7.21.12
+          -if user_signed_in?
+            Logged in as: #{current_user.email} 
+            |
+            =link_to 'Sign Out', sign_out_path
+          -else
+            =link_to 'Sign In', sign_in_path
+            | 7.21.12
       .container.span-22.prepend-1.append-1
         .span-4
           %ul#top_nav
             %li= link_to 'Home', root_path
             %li= link_to 'Pics', pics_path
             %li= link_to 'Game', game_path
+            -if user_signed_in?
+              %li= link_to 'Guests', guests_path
 
         #main_content.span-18.append-2.last
+          %h1= @title if @title
           -if notice
             %p.notice= notice
           -if alert

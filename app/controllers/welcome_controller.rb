@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @title = "Tying the Knot"
+    @title = "What's Going On?"
   end
 
   def pics

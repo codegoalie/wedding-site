@@ -1,0 +1,11 @@
+%p
+  #{@guest.email}
+  %br
+  #{@guest.address}
+  %br
+  #{@guest.city}, #{@guest.state} #{@guest.zip}
+  %br
+  Guests Attending: #{@guest.count}
+
+=link_to "Edit", edit_guest_path(@guest)
+=link_to "Delete", guest_path(@guest), :confirm => "Are you sure?", :method => 'delete'

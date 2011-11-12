@@ -1,0 +1,34 @@
+=form_for @guest do |f|
+  -if @guest.errors.any?
+    #error_message
+      %h5 #{pluralize(@guest.errors.count, 'error')} prohibited this driver from being saved:
+      %ul
+        -@guest.errors.full_message.each do |msg|
+          %li= msg
+
+  %table.edit_table
+    %tr
+      %td.first= f.label :name
+      %td= f.text_field :name
+    %tr
+      %td= f.label :email
+      %td= f.email_field :email
+    %tr
+      %td= f.label :address
+      %td= f.text_field :address
+    %tr
+      %td= f.label :city
+      %td= f.text_field :city
+    %tr
+      %td= f.label :state
+      %td= f.text_field :state
+    %tr
+      %td= f.label :zip
+      %td= f.text_field :zip
+    %tr
+      %td= f.label :count
+      %td= f.number_field :count
+
+  .actions
+    = f.submit
+    =link_to 'Cancel', @guest

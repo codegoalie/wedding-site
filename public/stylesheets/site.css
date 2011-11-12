@@ -38,7 +38,7 @@ ul#top_nav li:hover {
 /* line 32, ../../app/stylesheets/site.scss */
 ul#top_nav li a {
   color: #367cda;
-  padding-left: 10px;
+  padding-left: 8px;
   display: block;
   text-decoration: none;
 }

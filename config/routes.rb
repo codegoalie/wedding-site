@@ -1,4 +1,19 @@
 Wedding::Application.routes.draw do
+  get "guest/index"
+
+  get "guest/new"
+
+  get "guest/show"
+
+  get "guest/destroy"
+
+  devise_for :users do
+    get '/signin', :to => 'devise/sessions#new', :as => 'sign_in'
+    get '/signout', :to => 'devise/sessions#destroy', :as => 'sign_out'
+  end
+
+  resources :guests
+
   get "welcome/index"
   match '/pics' => 'welcome#pics'
   match '/game' => 'welcome#game'
