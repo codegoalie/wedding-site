@@ -3,8 +3,9 @@ class GuestsController < ApplicationController
 
   def index
     @title = "Guest List"
-    @guests = Guest.all
+    @guests = Guest.order('name')
     @total_guests = Guest.sum(:count)
+    @guest_count = Guest.count
   end
 
   def new

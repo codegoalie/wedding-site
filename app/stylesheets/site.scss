@@ -1,5 +1,9 @@
 $blue_ribbon:#367cda;
 
+.bold { 
+  font-weight:bold; 
+}
+
 .container {
   font-size:1.2em;
   background: url('/images/continuous_bg.png') repeat-y center top;
@@ -99,5 +103,11 @@ ul#news_list
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
+}
+
+.highlighted_table {
+  tr {
+    &:hover { background-color:lighten($blue_ribbon, 30%); }
+  }
 }
 

@@ -1,9 +1,12 @@
 %p
   =link_to "New Guest", new_guest_path
 
-%h5 
+%p 
   Total Guests:
   %span.bold= @total_guests
+  %br 
+  Total Groups:
+  %span.bold= @guest_count
 %table
   %thead
     %th Name
@@ -12,7 +15,7 @@
   %tbody
   -@guests.each do |guest|
     %tr
-      %td= guest.name
-      %td #{guest.city}, #{guest.state}
-      %td= guest.count
+      %td= link_to guest.name, guest_path(guest)
+      %td= link_to "#{guest.city}, #{guest.state}", guest_path(guest)
+      %td= link_to guest.count, guest_path(guest)
 

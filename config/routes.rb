@@ -1,11 +1,4 @@
 Wedding::Application.routes.draw do
-  get "guest/index"
-
-  get "guest/new"
-
-  get "guest/show"
-
-  get "guest/destroy"
 
   devise_for :users do
     get '/signin', :to => 'devise/sessions#new', :as => 'sign_in'

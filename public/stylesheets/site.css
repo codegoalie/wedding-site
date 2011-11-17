@@ -1,23 +1,28 @@
 /* line 3, ../../app/stylesheets/site.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 7, ../../app/stylesheets/site.scss */
 .container {
   font-size: 1.2em;
   background: url("/images/continuous_bg.png") repeat-y center top;
   font-family: 'Montez', serif;
 }
 
-/* line 9, ../../app/stylesheets/site.scss */
+/* line 13, ../../app/stylesheets/site.scss */
 #header {
   height: 175px;
   background: url("/images/header_bg.png") no-repeat center top;
   font-family: 'Montez', arial, serif;
 }
-/* line 13, ../../app/stylesheets/site.scss */
+/* line 17, ../../app/stylesheets/site.scss */
 #header h3, #header h2 {
   margin: 60px 12px 0px 12px;
   line-height: 1.2em;
 }
 
-/* line 19, ../../app/stylesheets/site.scss */
+/* line 23, ../../app/stylesheets/site.scss */
 ul#top_nav {
   position: relative;
   padding: 4px 0 4px 0;
@@ -25,67 +30,67 @@ ul#top_nav {
   border-right: 1px solid #367cda;
   font-family: 'Delius', arial, serif;
 }
-/* line 26, ../../app/stylesheets/site.scss */
+/* line 30, ../../app/stylesheets/site.scss */
 ul#top_nav li {
   list-style: none;
   font-size: 2em;
   height: 51px;
 }
-/* line 30, ../../app/stylesheets/site.scss */
+/* line 34, ../../app/stylesheets/site.scss */
 ul#top_nav li:hover {
   background: #367cda;
 }
-/* line 32, ../../app/stylesheets/site.scss */
+/* line 36, ../../app/stylesheets/site.scss */
 ul#top_nav li a {
   color: #367cda;
   padding-left: 8px;
   display: block;
   text-decoration: none;
 }
-/* line 34, ../../app/stylesheets/site.scss */
+/* line 38, ../../app/stylesheets/site.scss */
 ul#top_nav li a:hover {
   color: #133665;
 }
 
-/* line 43, ../../app/stylesheets/site.scss */
+/* line 47, ../../app/stylesheets/site.scss */
 #main_content {
   margin-top: 1em;
   font-size: 18pt;
 }
 
-/* line 49, ../../app/stylesheets/site.scss */
+/* line 53, ../../app/stylesheets/site.scss */
 ul#news_list {
   list-style: none;
 }
-/* line 51, ../../app/stylesheets/site.scss */
+/* line 55, ../../app/stylesheets/site.scss */
 ul#news_list li.first {
   border-top: none;
 }
-/* line 53, ../../app/stylesheets/site.scss */
+/* line 57, ../../app/stylesheets/site.scss */
 ul#news_list li {
   border-top: 1px solid #8cb4ea;
   margin-top: 1em;
 }
-/* line 58, ../../app/stylesheets/site.scss */
+/* line 62, ../../app/stylesheets/site.scss */
 ul#news_list li .date {
   font-weight: bold;
   /* margin-bottom:.5em;*/
 }
 
-/* line 65, ../../app/stylesheets/site.scss */
+/* line 69, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
   height: 200px;
 }
 
-/* line 70, ../../app/stylesheets/site.scss */
+/* line 74, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
   z-index: 1;
 }
 
-/* line 76, ../../app/stylesheets/site.scss */
+/* line 80, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -104,14 +109,19 @@ ul#news_list li .date {
   z-index: 2;
 }
 
-/* line 94, ../../app/stylesheets/site.scss */
+/* line 98, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
   z-index: 3;
 }
 
-/* line 99, ../../app/stylesheets/site.scss */
+/* line 103, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
+}
+
+/* line 110, ../../app/stylesheets/site.scss */
+.highlighted_table tr:hover {
+  background-color: #b7d0f2;
 }
