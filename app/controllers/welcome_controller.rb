@@ -9,4 +9,8 @@ class WelcomeController < ApplicationController
     @images = Dir.entries("#{Rails.public_path}/images/image_gallery").delete_if{ |f| f =~ /^\.+$/ }
   end
 
+  def game
+    @title = 'Match Game'
+  end
+
 end
