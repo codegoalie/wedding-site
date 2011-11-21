@@ -36,5 +36,15 @@ gem 'spreadsheet'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
  group :development, :test do
+   gem 'rspec-rails'
+   gem 'ZenTest'
+
+   gem 'capybara'
+   gem 'webrat'
+
+   gem 'spork'
+
    gem 'sqlite3'
+  
+   gem 'factory_girl_rails'
  end
