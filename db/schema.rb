@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112180956) do
+ActiveRecord::Schema.define(:version => 20120215010547) do
+
+  create_table "budget_items", :force => true do |t|
+    t.string  "type"
+    t.decimal "units"
+    t.decimal "rate"
+    t.string  "title"
+    t.date    "balance_due_on"
+  end
 
   create_table "guests", :force => true do |t|
     t.string   "name"

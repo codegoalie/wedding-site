@@ -1,0 +1,25 @@
+= link_to 'New Budget Item', new_budget_item_path
+%table#budget_table
+  %thead
+    %tr
+      %th Title
+      %th Units
+      %th Rate
+      %th Total
+  %tbody
+    -total = 0
+    -@items.each do |item|
+      -total += item.total
+      %tr
+        %td= item.title
+        %td= item.units
+        %td= number_to_currency item.rate
+        %td= number_to_currency item.total
+  %tfoot
+    %tr
+      %td
+      %td
+      %td
+      %td= number_to_currency total
+
+

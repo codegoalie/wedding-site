@@ -41,6 +41,7 @@
             %li= link_to 'Game', game_path
             -if user_signed_in?
               %li= link_to 'Guests', guests_path
+              %li= link_to 'Budget', budget_items_path
 
         #main_content.span-18.append-2.last
           %h1= @title if @title

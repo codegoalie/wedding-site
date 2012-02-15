@@ -125,3 +125,9 @@ ul#news_list li .date {
 .highlighted_table tr:hover {
   background-color: #b7d0f2;
 }
+
+/* line 115, ../../app/stylesheets/site.scss */
+#budget_table tfoot tr td {
+  font-weight: bold;
+  border-top: 1px solid #367cda;
+}
