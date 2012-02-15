@@ -26,71 +26,70 @@
 ul#top_nav {
   position: relative;
   padding: 4px 0 4px 0;
-  margin-left: 8px;
   border-right: 1px solid #367cda;
   font-family: 'Delius', arial, serif;
 }
-/* line 30, ../../app/stylesheets/site.scss */
+/* line 29, ../../app/stylesheets/site.scss */
 ul#top_nav li {
   list-style: none;
   font-size: 2em;
   height: 51px;
 }
-/* line 34, ../../app/stylesheets/site.scss */
+/* line 33, ../../app/stylesheets/site.scss */
 ul#top_nav li:hover {
   background: #367cda;
 }
-/* line 36, ../../app/stylesheets/site.scss */
+/* line 35, ../../app/stylesheets/site.scss */
 ul#top_nav li a {
   color: #367cda;
   padding-left: 8px;
   display: block;
   text-decoration: none;
 }
-/* line 38, ../../app/stylesheets/site.scss */
+/* line 37, ../../app/stylesheets/site.scss */
 ul#top_nav li a:hover {
   color: #133665;
 }
 
-/* line 47, ../../app/stylesheets/site.scss */
+/* line 46, ../../app/stylesheets/site.scss */
 #main_content {
   margin-top: 1em;
   font-size: 18pt;
 }
 
-/* line 53, ../../app/stylesheets/site.scss */
+/* line 52, ../../app/stylesheets/site.scss */
 ul#news_list {
   list-style: none;
 }
-/* line 55, ../../app/stylesheets/site.scss */
+/* line 54, ../../app/stylesheets/site.scss */
 ul#news_list li.first {
   border-top: none;
 }
-/* line 57, ../../app/stylesheets/site.scss */
+/* line 56, ../../app/stylesheets/site.scss */
 ul#news_list li {
   border-top: 1px solid #8cb4ea;
   margin-top: 1em;
 }
-/* line 62, ../../app/stylesheets/site.scss */
+/* line 61, ../../app/stylesheets/site.scss */
 ul#news_list li .date {
   font-weight: bold;
   /* margin-bottom:.5em;*/
 }
 
-/* line 69, ../../app/stylesheets/site.scss */
+/* line 68, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
   height: 200px;
 }
 
-/* line 74, ../../app/stylesheets/site.scss */
+/* line 73, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
   z-index: 1;
 }
 
-/* line 80, ../../app/stylesheets/site.scss */
+/* line 79, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -109,24 +108,24 @@ ul#news_list li .date {
   z-index: 2;
 }
 
-/* line 98, ../../app/stylesheets/site.scss */
+/* line 97, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
   z-index: 3;
 }
 
-/* line 103, ../../app/stylesheets/site.scss */
+/* line 102, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
 }
 
-/* line 110, ../../app/stylesheets/site.scss */
+/* line 109, ../../app/stylesheets/site.scss */
 .highlighted_table tr:hover {
   background-color: #b7d0f2;
 }
 
-/* line 115, ../../app/stylesheets/site.scss */
+/* line 114, ../../app/stylesheets/site.scss */
 #budget_table tfoot tr td {
   font-weight: bold;
   border-top: 1px solid #367cda;
