@@ -27,6 +27,6 @@
       %td
       %td
       %td.align-right= number_to_currency @total
-      %td.align-right= number_to_currency @balance
+      %td.align-right= link_to number_to_currency(@balance), payments_path
 
 
