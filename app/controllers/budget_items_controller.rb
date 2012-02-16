@@ -4,7 +4,7 @@ class BudgetItemsController < ApplicationController
 
   def index
     @title = "Budget"
-    @items = BudgetItem.all
+    @items = BudgetItem.order('lower(title)').all
   end
 
   def new

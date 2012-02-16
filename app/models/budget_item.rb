@@ -9,4 +9,13 @@ class BudgetItem < ActiveRecord::Base
   def total
     units * rate
   end
+
+  def self.inherited(child)
+    child.instance_eval do
+      def model_name
+        BudgetItem.model_name
+      end
+    end
+    super
+  end
 end

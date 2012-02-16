@@ -15,7 +15,7 @@
         %td= item.title
         %td= item.units
         %td= number_to_currency item.rate
-        %td= number_to_currency item.total
+        %td{ :style => 'text-align:right;' }= number_to_currency item.total
         %td
           #{link_to "Edit", edit_budget_item_path(item)},
           #{link_to "Delete", budget_item_path(item), :method => :delete, :confirm => "You sure?"}
@@ -24,6 +24,6 @@
       %td
       %td
       %td
-      %td= number_to_currency total
+      %td{ :style => 'text-align:right;' }= number_to_currency total
 
 
