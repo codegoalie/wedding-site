@@ -53,43 +53,48 @@ ul#top_nav li a:hover {
 
 /* line 46, ../../app/stylesheets/site.scss */
 #main_content {
+  font-family: 'Delius', arial, serif;
   margin-top: 1em;
   font-size: 18pt;
 }
+/* line 47, ../../app/stylesheets/site.scss */
+#main_content h1 {
+  font-family: 'Montez', serif;
+}
 
-/* line 52, ../../app/stylesheets/site.scss */
+/* line 56, ../../app/stylesheets/site.scss */
 ul#news_list {
   list-style: none;
 }
-/* line 54, ../../app/stylesheets/site.scss */
+/* line 58, ../../app/stylesheets/site.scss */
 ul#news_list li.first {
   border-top: none;
 }
-/* line 56, ../../app/stylesheets/site.scss */
+/* line 60, ../../app/stylesheets/site.scss */
 ul#news_list li {
   border-top: 1px solid #8cb4ea;
   margin-top: 1em;
 }
-/* line 61, ../../app/stylesheets/site.scss */
+/* line 65, ../../app/stylesheets/site.scss */
 ul#news_list li .date {
   font-weight: bold;
   /* margin-bottom:.5em;*/
 }
 
-/* line 68, ../../app/stylesheets/site.scss */
+/* line 72, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
   height: 200px;
 }
 
-/* line 73, ../../app/stylesheets/site.scss */
+/* line 77, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
   z-index: 1;
 }
 
-/* line 79, ../../app/stylesheets/site.scss */
+/* line 83, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -108,24 +113,24 @@ ul#news_list li .date {
   z-index: 2;
 }
 
-/* line 97, ../../app/stylesheets/site.scss */
+/* line 101, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
   z-index: 3;
 }
 
-/* line 102, ../../app/stylesheets/site.scss */
+/* line 106, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
 }
 
-/* line 109, ../../app/stylesheets/site.scss */
+/* line 113, ../../app/stylesheets/site.scss */
 .highlighted_table tr:hover {
   background-color: #b7d0f2;
 }
 
-/* line 114, ../../app/stylesheets/site.scss */
+/* line 118, ../../app/stylesheets/site.scss */
 #budget_table tfoot tr td {
   font-weight: bold;
   border-top: 1px solid #367cda;
