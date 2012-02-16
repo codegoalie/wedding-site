@@ -1,0 +1,4 @@
+= render 'form'
+= link_to 'Back', budget_items_path
+%br
+= link_to "Delete", budget_item_path(@item), :method => :delete, :confirm => "You sure?"

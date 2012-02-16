@@ -7,7 +7,7 @@ Wedding::Application.routes.draw do
   end
 
   resources :guests
-  resources :budget_items, :path => 'budget'
+  resources :budget_items, :path => 'budget', :except => [ :show ]
 
 
   match '/pics' => 'welcome#pics'

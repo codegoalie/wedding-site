@@ -1,0 +1,31 @@
+%table
+  = form_for @item, :url => budget_item_path(@item) do |f|
+    %tr
+      %td
+        = f.label :title
+      %td
+        = f.text_field :title, :value => @item.title
+    %tr
+      %td
+        = f.label :type
+      %td
+        = f.select :type, options_for_select(@item_types, @item.type)
+    %tr
+      %td
+        = f.label :units
+      %td
+        = f.text_field :units, :value => @item.units
+    %tr
+      %td
+        = f.label :rate
+      %td
+        = f.text_field :rate, :value => @item.rate
+    %tr
+      %td
+        = f.label :balance_due_on
+      %td
+        = f.text_field :balance_due_on, :value =>@item.balance_due_on
+    %tr
+      %td{ :colspan => 2}
+        = f.submit 'Save'
+
