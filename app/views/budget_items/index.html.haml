@@ -19,7 +19,8 @@
         %td= item.units
         %td= number_to_currency item.rate
         %td.align-right= number_to_currency item.total
-        %td.align-right= number_to_currency item.balance
+        %td.align-right.bold{ :class => item.total == item.balance ? '' : 'blue-color' }
+          = number_to_currency item.balance
   %tfoot
     %tr
       %td
