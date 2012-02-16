@@ -1,7 +1,7 @@
 class BudgetItem < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
 
-  has_many :payments
+  has_many :payments, :dependent => :destroy
 
   attr_accessible :type, :units, :rate, :title, :balance_due_on
 
