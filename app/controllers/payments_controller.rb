@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
       redirect_to payments_path
     else
       @title = "New Payment"
-      render new
+      render 'new'
     end
   end
 
