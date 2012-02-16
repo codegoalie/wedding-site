@@ -5,7 +5,7 @@
 
 .clear
 - @item.payments.each do |payment|
-  .align-right{ :style => 'float:right;' }
+  .align-right{ :style => 'float:right;clear:right;' }
     = link_to "#{l payment.paid_on} - #{number_to_currency payment.amount}", edit_payment_path(payment)
 %h4 Payments
 %hr

@@ -10,7 +10,7 @@
   %tbody
     -@payments.each do |payment|
       %tr
-        %td= link_to payment.budget_item.title_with_total, edit_budget_item_path(payment.budget_item)
+        %td= link_to payment.budget_item.title_with_total, budget_item_path(payment.budget_item)
         %td= l payment.paid_on
         %td.align-right= link_to number_to_currency(payment.amount), edit_payment_path(payment)
   %tfoot
