@@ -1,5 +1,11 @@
 %table
-  = form_for @item, :url => budget_item_path(@item) do |f|
+  = form_for @item, :url => polymorphic_path(@item) do |f|
+    - if @item.errors.any?
+      #error_message
+        %h5= "#{pluralize(@item.errors.count, 'error')} prohibited this budget item from being saved:"
+        %ul
+          - @item.errors.full_messages.each do |msg|
+            %li= msg
     %tr
       %td
         = f.label :title

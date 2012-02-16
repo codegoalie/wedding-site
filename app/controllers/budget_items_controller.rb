@@ -14,6 +14,7 @@ class BudgetItemsController < ApplicationController
 
   def create
     @item = BudgetItem.new(params[:budget_item])
+    @title = 'New Budget Item'
 
     if @item.save
       flash[:success] = "Budget Item Succesfully Saved"
