@@ -1,10 +1,17 @@
 class BudgetItemsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :load_budget_item_types, :except => [ :index, :delete ]
+  before_filter :load_budget_item_types, :except => [ :index, :delete, :show ]
 
   def index
     @title = "Budget"
-    @items = BudgetItem.order('lower(title)').all
+    @items = BudgetItem.includes(:payments).all
+    @total = @items.map{ |i| i.total }.sum
+    @balance = @items.map{ |i| i.balance }.sum
+  end
+
+  def show
+    @item = BudgetItem.find params[:id]
+    @title = @item.title
   end
 
   def new

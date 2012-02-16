@@ -1,0 +1,21 @@
+= link_to 'New Payment', new_payment_path
+%br
+%br
+%table
+  %thead
+    %tr
+      %th Budget Item
+      %th Paid On
+      %th Amount
+  %tbody
+    -@payments.each do |payment|
+      %tr
+        %td= link_to payment.budget_item.title_with_total, edit_budget_item_path(payment.budget_item)
+        %td= l payment.paid_on
+        %td.align-right= link_to number_to_currency(payment.amount), edit_payment_path(payment)
+  %tfoot
+    %tr
+      %td
+      %td
+      %td.align-right= number_to_currency @total
+

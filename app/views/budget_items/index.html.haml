@@ -1,29 +1,31 @@
 = link_to 'New Budget Item', new_budget_item_path
+%br
+= link_to 'New Payment', new_payment_path
+%br
+%br
 %table#budget_table
   %thead
     %tr
       %th Title
       %th Units
       %th Rate
-      %th Total
+      %th.align-right Total
+      %th.align-right Balance
       %th
   %tbody
-    -total = 0
     -@items.each do |item|
-      -total += item.total
       %tr
-        %td= item.title
+        %td= link_to item.title, budget_item_path(item)
         %td= item.units
         %td= number_to_currency item.rate
-        %td{ :style => 'text-align:right;' }= number_to_currency item.total
-        %td
-          #{link_to "Edit", edit_budget_item_path(item)},
-          #{link_to "Delete", budget_item_path(item), :method => :delete, :confirm => "You sure?"}
+        %td.align-right= number_to_currency item.total
+        %td.align-right= number_to_currency item.balance
   %tfoot
     %tr
       %td
       %td
       %td
-      %td{ :style => 'text-align:right;' }= number_to_currency total
+      %td.align-right= number_to_currency @total
+      %td.align-right= number_to_currency @balance
 
 

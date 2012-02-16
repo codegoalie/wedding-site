@@ -3,98 +3,108 @@
   font-weight: bold;
 }
 
+/* line 6, ../../app/stylesheets/site.scss */
+.align-right {
+  text-align: right;
+}
+
 /* line 7, ../../app/stylesheets/site.scss */
+.clear {
+  clear: both;
+}
+
+/* line 9, ../../app/stylesheets/site.scss */
 .container {
   font-size: 1.2em;
   background: url("/images/continuous_bg.png") repeat-y center top;
   font-family: 'Montez', serif;
 }
 
-/* line 13, ../../app/stylesheets/site.scss */
+/* line 15, ../../app/stylesheets/site.scss */
 #header {
   height: 175px;
   background: url("/images/header_bg.png") no-repeat center top;
   font-family: 'Montez', arial, serif;
 }
-/* line 17, ../../app/stylesheets/site.scss */
+/* line 19, ../../app/stylesheets/site.scss */
 #header h3, #header h2 {
   margin: 60px 12px 0px 12px;
   line-height: 1.2em;
 }
 
-/* line 23, ../../app/stylesheets/site.scss */
+/* line 25, ../../app/stylesheets/site.scss */
 ul#top_nav {
   position: relative;
   padding: 4px 0 4px 0;
   border-right: 1px solid #367cda;
   font-family: 'Delius', arial, serif;
 }
-/* line 29, ../../app/stylesheets/site.scss */
+/* line 31, ../../app/stylesheets/site.scss */
 ul#top_nav li {
   list-style: none;
   font-size: 2em;
   height: 51px;
 }
-/* line 33, ../../app/stylesheets/site.scss */
+/* line 35, ../../app/stylesheets/site.scss */
 ul#top_nav li:hover {
   background: #367cda;
 }
-/* line 35, ../../app/stylesheets/site.scss */
+/* line 37, ../../app/stylesheets/site.scss */
 ul#top_nav li a {
   color: #367cda;
   padding-left: 8px;
   display: block;
   text-decoration: none;
 }
-/* line 37, ../../app/stylesheets/site.scss */
+/* line 39, ../../app/stylesheets/site.scss */
 ul#top_nav li a:hover {
   color: #133665;
 }
 
-/* line 46, ../../app/stylesheets/site.scss */
+/* line 48, ../../app/stylesheets/site.scss */
 #main_content {
   font-family: 'Delius', arial, serif;
   margin-top: 1em;
   font-size: 18pt;
 }
-/* line 47, ../../app/stylesheets/site.scss */
+/* line 49, ../../app/stylesheets/site.scss */
 #main_content h1 {
   font-family: 'Montez', serif;
 }
 
-/* line 56, ../../app/stylesheets/site.scss */
+/* line 58, ../../app/stylesheets/site.scss */
 ul#news_list {
   list-style: none;
 }
-/* line 58, ../../app/stylesheets/site.scss */
+/* line 60, ../../app/stylesheets/site.scss */
 ul#news_list li.first {
   border-top: none;
 }
-/* line 60, ../../app/stylesheets/site.scss */
+/* line 62, ../../app/stylesheets/site.scss */
 ul#news_list li {
   border-top: 1px solid #8cb4ea;
   margin-top: 1em;
 }
-/* line 65, ../../app/stylesheets/site.scss */
+/* line 67, ../../app/stylesheets/site.scss */
 ul#news_list li .date {
   font-weight: bold;
   /* margin-bottom:.5em;*/
 }
 
-/* line 72, ../../app/stylesheets/site.scss */
+/* line 74, ../../app/stylesheets/site.scss */
 #footer {
   background: url("/images/footer_bg.png") no-repeat center bottom;
   height: 200px;
 }
 
-/* line 77, ../../app/stylesheets/site.scss */
+/* line 79, ../../app/stylesheets/site.scss */
 #boxcard {
   margin: 0 auto;
   width: 625px;
   z-index: 1;
 }
 
-/* line 83, ../../app/stylesheets/site.scss */
+/* line 85, ../../app/stylesheets/site.scss */
 #boxcard div {
   float: left;
   width: 100px;
@@ -113,30 +123,30 @@ ul#news_list li .date {
   z-index: 2;
 }
 
-/* line 101, ../../app/stylesheets/site.scss */
+/* line 103, ../../app/stylesheets/site.scss */
 #boxcard div img {
   border: none;
   z-index: 3;
 }
 
-/* line 106, ../../app/stylesheets/site.scss */
+/* line 108, ../../app/stylesheets/site.scss */
 .opacity {
   opacity: .6;
   filter: alpha(opacity=60);
 }
 
-/* line 113, ../../app/stylesheets/site.scss */
+/* line 115, ../../app/stylesheets/site.scss */
 .highlighted_table tr:hover {
   background-color: #b7d0f2;
 }
 
-/* line 118, ../../app/stylesheets/site.scss */
+/* line 120, ../../app/stylesheets/site.scss */
 #budget_table tfoot tr td {
   font-weight: bold;
   border-top: 1px solid #367cda;
 }
 
-/* line 124, ../../app/stylesheets/site.scss */
+/* line 126, ../../app/stylesheets/site.scss */
 #error_message {
   border: 3px solid red;
   margin: 0.5em 3em;
