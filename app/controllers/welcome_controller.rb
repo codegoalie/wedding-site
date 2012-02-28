@@ -13,4 +13,10 @@ class WelcomeController < ApplicationController
     @title = 'Match Game'
   end
 
+  def info
+    @title = 'Info'
+
+    @api_key = 'AIzaSyA49RbPoQKpfXOSKFVUQOFvadjXk8o43xo'
+  end
+
 end

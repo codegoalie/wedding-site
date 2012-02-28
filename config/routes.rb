@@ -13,6 +13,7 @@ Wedding::Application.routes.draw do
 
   match '/pics' => 'welcome#pics'
   match '/game' => 'welcome#game'
+  match '/info' => 'welcome#info'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
