@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
   end
 
   def info
-    @title = 'Info'
+    @title = 'Specific Information'
 
     @api_key = 'AIzaSyA49RbPoQKpfXOSKFVUQOFvadjXk8o43xo'
   end
