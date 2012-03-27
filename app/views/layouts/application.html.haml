@@ -33,17 +33,18 @@
             =link_to 'Sign In', sign_in_path
             | 7.21.12
       .container.span-22.prepend-1.append-1
-        .span-4
+        .span-5
           %ul#top_nav
             %li= link_to 'Home', root_path
-            %li= link_to 'Specs', info_path
+            %li= link_to 'Info', info_path
             %li= link_to 'Pics', pics_path
             %li= link_to 'Game', game_path
+            %li= link_to 'Registry', registry_path
             -if user_signed_in?
               %li= link_to 'Guests', guests_path
               %li= link_to 'Budget', budget_items_path
 
-        #main_content.span-18.append-2.last
+        #main_content.span-17.append-2.last
           %h1= @title if @title
           -if notice
             %p.notice= notice
