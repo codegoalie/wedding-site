@@ -1,0 +1,22 @@
+- unless @item.class == FlatRateBudgetItem
+  #{@item.units} x #{number_to_currency @item.rate} 
+.align-right{ :style => 'float:right;' }
+  =number_to_currency @item.total
+
+.clear
+- @item.payments.each do |payment|
+  .align-right{ :style => 'float:right;clear:right;' }
+    = link_to "#{l payment.paid_on} - #{number_to_currency payment.amount}", edit_payment_path(payment)
+%h4 Payments
+%hr
+.align-right.bold{ :style => 'float:right;' }
+  =number_to_currency @item.balance
+%h3 Balance
+
+= link_to 'Back', budget_items_path
+%br
+= link_to "Edit", edit_budget_item_path(@item)
+%br
+%br
+= link_to "Delete", budget_item_path(@item), :method => :delete, :confirm => "You sure?"
+

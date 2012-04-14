@@ -1,0 +1,32 @@
+%table
+  = form_for @payment do |f|
+    - if @payment.errors.any?
+      #error_message
+        %h5= "#{pluralize(@payment.errors.count, 'error')} prohibited this payment item from being saved:"
+        %ul
+          - @payment.errors.full_messages.each do |msg|
+            %li= msg
+    %tr
+      %td
+        = f.label :amount
+      %td
+        = f.text_field :amount
+    %tr
+      %td
+        = f.label :paid_on
+      %td
+        = f.text_field :paid_on
+    %tr
+      %td
+        = f.label :budget_item_id
+      %td
+        = f.select :budget_item_id, options_from_collection_for_select(BudgetItem.all, :id, :title_with_total, @payment.budget_item_id)
+    %tr
+      %td
+        = f.label :check_number
+      %td
+        = f.text_field :check_number
+    %tr
+      %td{ :colspan => 2}
+        = f.submit 'Save'
+

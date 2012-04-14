@@ -1,0 +1,37 @@
+%table
+  = form_for @item, :url => polymorphic_path(@item) do |f|
+    - if @item.errors.any?
+      #error_message
+        %h5= "#{pluralize(@item.errors.count, 'error')} prohibited this budget item from being saved:"
+        %ul
+          - @item.errors.full_messages.each do |msg|
+            %li= msg
+    %tr
+      %td
+        = f.label :title
+      %td
+        = f.text_field :title
+    %tr
+      %td
+        = f.label :type
+      %td
+        = f.select :type, options_for_select(@item_types, @item.type)
+    %tr
+      %td
+        = f.label :units
+      %td
+        = f.text_field :units
+    %tr
+      %td
+        = f.label :rate
+      %td
+        = f.text_field :rate
+    %tr
+      %td
+        = f.label :balance_due_on
+      %td
+        = f.text_field :balance_due_on
+    %tr
+      %td{ :colspan => 2}
+        = f.submit 'Save'
+

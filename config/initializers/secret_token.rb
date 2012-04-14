@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Wedding::Application.config.secret_token = 'd201289b24cb44a3068502a6e115c14447fd9369e9500208dd5e6042fdbd3e466e3e279c66d21ee9c440e9138d59e857254ff72278345d956625ef0b536ed457'
+WeddingSite::Application.config.secret_token = '79299e3b1c914fcf77701a6266937d128fd7a9ee5ebdbf8374165d8be55f3ae2c066208d6be342019954d42e34224d7ddcbdc08122da691db1f018054fbabe60'
