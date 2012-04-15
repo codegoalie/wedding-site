@@ -1,19 +1,16 @@
-%ul#news_list
-  %li.first
-    .date 2.27.12
-    =link_to "Additional Wedding Specifics", info_path
-    have been given a home on their own page.
-    The Bertram is 
-    %span.bold now accepting reservations for rooms
-    , if anyone needs them. You can place them under the
-    Marshall/Facer Wedding block!
-  %li
-    .date 8.21.11 
-    %span{ :style => 'font-size:1.5em;' }
-      Engagement Pictures 
-    are now available in the 
-    = link_to 'Image Gallery', pics_path 
-  %li 
-    .date 7.20.11
-    Play our lil' 
-    =link_to 'matching game', game_path
+.row-fluid
+  .span4=image_tag 'standing.jpg'
+  .span8
+    .hero-unit.black.font-delius.center{ :style => 'background:white;'}
+      %h1 
+        Hayley Facer
+        %br
+        &
+        %br
+        Christopher Marshall 
+        %h2
+          are tying the knot!
+      %p
+        %br
+        %h3 Saturday July 21st, 2012
+      %p=link_to 'Get the Deets...', info_path, { :class => 'btn  btn-large' }

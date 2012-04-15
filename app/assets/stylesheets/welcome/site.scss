@@ -1,0 +1,23 @@
+@import '../partials/colors';
+@import '../partials/standards';
+@import '../partials/fonts';
+
+
+.navbar-inner {
+  background-image:none;
+  background-color:$malibu;
+  color:#fff;
+  ul.nav  li a {
+    color:#fff;
+    &:hover {
+      color:#000;
+    }
+  }
+}
+
+#news_list {
+  .date {
+
+  }
+}
+

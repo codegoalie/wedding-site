@@ -11,6 +11,8 @@ gem 'devise'
 
 gem 'haml-rails'
 
+gem 'spreadsheet'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +30,9 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+ gem 'rb-readline'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

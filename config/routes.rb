@@ -1,21 +1,20 @@
 WeddingSite::Application.routes.draw do
 
-
-
   devise_for :users do
     get '/signin', :to => 'devise/sessions#new', :as => 'sign_in'
     get '/signout', :to => 'devise/sessions#destroy', :as => 'sign_out'
   end
 
-  resources :guests
+  resources :guests, :meals
   resources :payments, :except => [ :show ]
   resources :budget_items, :path => 'budget'
 
 
-  match '/pics' => 'welcome#pics'
-  match '/game' => 'welcome#game'
-  match '/info' => 'welcome#info'
-  match '/registry' => 'welcome#registry'
+  match '/pics' => 'welcome#pics', :as => 'pics'
+  match '/game' => 'welcome#game', :as => 'game'
+  match '/info' => 'welcome#info', :as => 'info'
+  match '/news' => 'welcome#news', :as => 'news'
+  match '/registry' => 'welcome#registry', :as => 'registry'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

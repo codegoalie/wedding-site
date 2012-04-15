@@ -5,7 +5,7 @@
 =content_for :javascript do
   = javascript_include_tag "galleria-1.2.4"
   :javascript
-    Galleria.loadTheme('/galleria/themes/classic/galleria.classic.js');
+    Galleria.loadTheme("#{asset_path('galleria/themes/classic/galleria.classic.js')}");
     $('#gallery').galleria({
       width:630,
       height:600

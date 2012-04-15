@@ -1,12 +1,13 @@
 class WelcomeController < ApplicationController
+  layout 'welcome'
+
   def index
-    @title = "What's Going On?"
   end
 
   def pics
     @title = "Picture Gallery"
 
-    @images = Dir.entries("#{Rails.public_path}/images/image_gallery").delete_if{ |f| f =~ /^\.+$/ }
+    @images = Dir.entries("#{Rails.root}/app/assets/images/image_gallery").delete_if{ |f| f =~ /^\.+$/ }
   end
 
   def game
@@ -17,6 +18,10 @@ class WelcomeController < ApplicationController
     @title = 'Specific Information'
 
     @api_key = 'AIzaSyA49RbPoQKpfXOSKFVUQOFvadjXk8o43xo'
+  end
+
+  def news
+    @title = "What's Going On?"
   end
 
   def registry

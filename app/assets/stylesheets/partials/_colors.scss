@@ -1,0 +1,26 @@
+$blue_ribbon:#367cda;
+$malibu:#009DB8;
+
+$yellow:#ffff00;
+$magenta:#ff00e4;
+$purple:#9700ff;
+$orange:#ff7227;
+$pink:#ff72ff;
+$green:#72ff47;
+
+.yellow { color:$yellow; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; }
+.magenta { color:$magenta; }
+.purple { color:$purple; }
+.orange { color:$orange; }
+.pink { color:$pink; }
+.green { color:$green; }
+.black { color:#000; }
+.white { color:#fff; }
+
+.malibu-bg { background-color:$malibu; }
+.yellow-bg { background-color:$yellow; }
+.magenta-bg { background-color:$magenta; }
+.purple-bg { background-color:$purple; }
+.orange-bg { background-color:$orange; }
+.pink-bg { background-color:$pink; }
+.green-bg { background-color:$green; }

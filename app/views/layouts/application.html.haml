@@ -9,7 +9,7 @@
     = favicon_link_tag
     = stylesheet_link_tag 'application'
 
-    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Sunshiney'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Great+Vibes'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Montez'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Delius'
 
@@ -30,14 +30,11 @@
               %li= link_to 'Guests', guests_path
               %li= link_to 'Budget', budget_items_path
           %ul.nav.pull-right
-            %li
-              -if user_signed_in?
-                Logged in as: #{current_user.email} 
-                |
-                =link_to 'Sign Out', sign_out_path
-              -else
-                =link_to 'Sign In', sign_in_path
-            %li.brand 7.21.12
+            -if user_signed_in?
+              %li=link_to current_user.email, sign_out_path
+              %li=link_to 'Sign Out', sign_out_path
+            -else
+              %li=link_to 'Sign In', sign_in_path
     .container-fluid
       .page-header
         %h1= @title if @title
