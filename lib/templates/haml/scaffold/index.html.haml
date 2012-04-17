@@ -1,0 +1,21 @@
+.row
+  .span1
+    =link_to "New <%= class_name %>", new_<%= singular_name %>_path
+  .span11
+    %table.table.table-bordered.striped
+      %thead
+        %tr
+          <% for attribute in attributes %>%th <%= attribute.name %>
+          <% end %>
+      %tbody
+        =render(@<%= plural_name %>) || raw("You have not added any <%= plural_name %>.<br/>Add a new one on the left.")
+
+=content_for :javascript do
+  :javascript
+    $(function() {
+      $("table tbody tr").click(function() {
+        document.location = "<%= plural_name %>/" + $(this).data('<%= singular_name %>-id');
+        return false;
+      });
+    });
+
