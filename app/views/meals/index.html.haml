@@ -1,2 +1,21 @@
-%h1 Meal#index
-%p Find me in app/views/meal/index.html.haml
+.row
+  .span1
+    =link_to "New Meal", new_meal_path
+  .span11
+    %table.table.table-bordered.striped
+      %thead
+        %tr
+          %th Name
+          %th Description
+      %tbody
+        =render(@meals) || raw("You have not added any meals.<br/>Add a new one on the left.")
+
+=content_for :javascript do
+  :javascript
+    $(function() {
+      $("table tbody tr").click(function() {
+        document.location = "meals/" + $(this).data('meal-id');
+        return false;
+      });
+    });
+

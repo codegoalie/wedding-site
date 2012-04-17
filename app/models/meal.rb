@@ -1,3 +1,3 @@
 class Meal < ActiveRecord::Base
-  attr_accessor :title, :description
+  attr_accessible :title, :description
 end

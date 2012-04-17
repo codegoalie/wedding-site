@@ -38,15 +38,22 @@
     .container-fluid
       .page-header
         %h1= @title if @title
-      .span12
-        -if notice
-          .alert= notice
-        -if alert
-          .alert.alert-error= alert
-      #main_content.span12
-        = yield
-      .navbar.navbar-fixed-bottom
-        o-llo
+      .row
+        .span6
+          -if notice
+            .alert= notice
+          -if alert
+            .alert.alert-error= alert
+          -if flash[:success]
+            .alert.alert-success= flash[:success]
+      .row
+        #main_content.span12
+          = yield
+    .navbar.navbar-fixed-bottom
+      .navbar-inner
+        .container
+          Copyright #{Date.today.year} Chris Marshall & Hayley Facer
+          
     = javascript_include_tag 'application'
     = yield :javascript
     -# :javascript

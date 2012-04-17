@@ -1,0 +1,24 @@
+%table
+  = form_for @meal do |f|
+    - if @meal.errors.any?
+      #error_message
+        %h5= "#{pluralize(@meal.errors.count, 'error')} prohibited this meal from being saved:"
+        %ul
+          - @meal.errors.full_messages.each do |msg|
+            %li= msg
+    %tr
+      %td
+        = f.label :title
+      %td
+        = f.text_field :title
+    %tr
+      %td
+        = f.label :description
+      %td
+        = f.text_field :description
+    %tr
+      %td{ :colspan => 2}
+        = f.submit 'Save'
+        -unless @meal.new_record?
+          =link_to 'Cancel', @meal
+

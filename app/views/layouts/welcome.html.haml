@@ -23,8 +23,6 @@
           %ul.nav.pull-right
             %li
               -if user_signed_in?
-                Logged in as: #{current_user.email} 
-                |
                 =link_to 'Sign Out', sign_out_path
               -else
                 =link_to 'Sign In', sign_in_path
@@ -47,6 +45,10 @@
             .page-header.font-montez{ :class => pick_color }
               %h1= @title
           =yield
+    .navbar.navbar-fixed-bottom
+      .navbar-inner
+        .container
+          Copyright #{Date.today.year} Chris Marshall & Hayley Facer
 
     =javascript_include_tag 'application'
     =yield :javascript

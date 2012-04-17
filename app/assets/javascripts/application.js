@@ -2,4 +2,5 @@
 // This file is automatically included by javascript_include_tag :defaults
 //
 //= require jquery
-//= require bootstrap
+//= require twitter/bootstrap
+//= require jquery_ujs

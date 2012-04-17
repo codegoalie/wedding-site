@@ -1,2 +1,9 @@
-%h1 Meal#show
-%p Find me in app/views/meal/show.html.haml
+.row
+  .span1
+    %ul.nav.nav-list
+      %li= link_to 'Edit', edit_meal_path(@meal)
+      %li= link_to 'Back', meals_path
+      %li.divider
+      %li= link_to "Delete", meal_path(@item), :method => :delete, :confirm => "You sure?"
+  .span11
+    =@meal.description
