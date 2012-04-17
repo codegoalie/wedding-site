@@ -1,0 +1,14 @@
+.row
+  .span1
+    %ul.nav.nav-list
+      %li= link_to 'Edit', edit_<%= singular_name %>_path(@<%= singular_name %>)
+      %li= link_to 'Back', <%= plural_name %>_path
+      %li.divider
+      %li= link_to "Delete", <%= singular_name %>_path(@<%= singular_name %>), :method => :delete, :confirm => "You sure?"
+  .span11
+    <% for attribute in attributes -%>
+      %dt 
+        <%= attribute.column.human_name %>
+      %dd
+        =@<%= singular_name %>.<%= attribute.name %>
+
