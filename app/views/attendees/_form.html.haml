@@ -1,0 +1,32 @@
+%table
+  = form_for @attendee do |f|
+    - if @attendee.errors.any?
+      #error_message
+        %h5= "#{pluralize(@attendee.errors.count, 'error')} prohibited this attendee from being saved:"
+        %ul
+          - @attendee.errors.full_messages.each do |msg|
+            %li= msg
+
+    %tr
+      %td
+        = f.label :guest_id
+      %td
+        = f.number_field :guest_id
+        %tr
+      %td
+        = f.label :name
+      %td
+        = f.text_field :name
+        %tr
+      %td
+        = f.label :meal_id
+      %td
+        = f.number_field :meal_id
+        
+
+    %tr
+      %td{ :colspan => 2}
+        = f.submit 'Save'
+        -unless @attendee.new_record?
+          =link_to 'Cancel', @attendee
+

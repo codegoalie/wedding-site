@@ -1,4 +1,6 @@
 class Attendee < ActiveRecord::Base
   belongs_to :meal
-  attr_accessor :name, :meal
+  belongs_to :guest
+
+  attr_accessible :name, :meal_id, :guest_id
 end

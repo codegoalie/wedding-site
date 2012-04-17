@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  guest_id: 1
+  name: MyString
+  meal_id: 1
+
+two:
+  guest_id: 1
+  name: MyString
+  meal_id: 1

@@ -1,5 +1,7 @@
 WeddingSite::Application.routes.draw do
 
+  resources :attendees
+
   devise_for :users do
     get '/signin', :to => 'devise/sessions#new', :as => 'sign_in'
     get '/signout', :to => 'devise/sessions#destroy', :as => 'sign_out'

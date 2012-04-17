@@ -1,0 +1,25 @@
+.row
+  .span1
+    =link_to "New Attendee", new_attendee_path
+  .span11
+    -if @attendees.any?
+      %table.table.table-bordered.striped
+        %thead
+          %tr
+            %th Guest
+            %th Name
+            %th Meal
+        %tbody
+          =render(@attendees)
+    -else
+      =raw("You have not added any attendees.<br/>Add a new one on the left.")
+
+=content_for :javascript do
+  :javascript
+    $(function() {
+      $("table tbody tr").click(function() {
+        document.location = "attendees/" + $(this).data('attendee-id');
+        return false;
+      });
+    });
+

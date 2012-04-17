@@ -1,0 +1,24 @@
+.row
+  .span1
+    %ul.nav.nav-list
+      %li= link_to 'Edit', edit_attendee_path(@attendee)
+      %li= link_to 'Back', attendees_path
+      %li.divider
+      %li= link_to "Delete", attendee_path(@attendee), :method => :delete, :confirm => "You sure?"
+  .span11
+    %dl
+      %dt
+        Guest
+      %dd
+        =@attendee.guest_id
+    %dl
+      %dt
+        Name
+      %dd
+        =@attendee.name
+    %dl
+      %dt
+        Meal
+      %dd
+        =@attendee.meal_id
+

@@ -6,9 +6,11 @@
       %li.divider
       %li= link_to "Delete", <%= singular_name %>_path(@<%= singular_name %>), :method => :delete, :confirm => "You sure?"
   .span11
-    <% for attribute in attributes -%>
-      %dt 
-        <%= attribute.column.human_name %>
+<% for attribute in attributes -%>
+    %dl
+      %dt
+        <%= attribute.human_name %>
       %dd
         =@<%= singular_name %>.<%= attribute.name %>
+<% end -%>
 
