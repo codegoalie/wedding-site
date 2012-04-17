@@ -1,0 +1,24 @@
+.row
+  .span1
+    =link_to "New Invitation", new_invitation_path
+  .span11
+    -if @invitations.any?
+      %table.table.table-bordered.striped
+        %thead
+          %tr
+            %th Guest
+            %th Passcode
+        %tbody
+          =render(@invitations)
+    -else
+      =raw("You have not added any invitations.<br/>Add a new one on the left.")
+
+=content_for :javascript do
+  :javascript
+    $(function() {
+      $("table tbody tr").click(function() {
+        document.location = "invitations/" + $(this).data('invitation-id');
+        return false;
+      });
+    });
+

@@ -12,6 +12,7 @@ gem 'devise'
 gem 'haml-rails'
 
 gem 'spreadsheet'
+gem 'simple-hasher' #, :require => 'simplehasher', :path => '/home/chrismar035/ruby/simple-hasher/'
 
 
 # Gems used only for assets and not required

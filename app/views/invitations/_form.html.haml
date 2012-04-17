@@ -1,0 +1,22 @@
+%table
+  = form_for @invitation do |f|
+    - if @invitation.errors.any?
+      #error_message
+        %h5= "#{pluralize(@invitation.errors.count, 'error')} prohibited this invitation from being saved:"
+        %ul
+          - @invitation.errors.full_messages.each do |msg|
+            %li= msg
+
+    %tr
+      %td
+        = f.label :guest_id
+      %td
+        = f.number_field :guest_id
+        %tr
+
+    %tr
+      %td{ :colspan => 2}
+        = f.submit 'Save'
+        -unless @invitation.new_record?
+          =link_to 'Cancel', @invitation
+

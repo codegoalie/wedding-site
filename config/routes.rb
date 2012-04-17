@@ -1,13 +1,11 @@
 WeddingSite::Application.routes.draw do
 
-  resources :attendees
-
   devise_for :users do
     get '/signin', :to => 'devise/sessions#new', :as => 'sign_in'
     get '/signout', :to => 'devise/sessions#destroy', :as => 'sign_out'
   end
 
-  resources :guests, :meals
+  resources :guests, :meals, :attendees, :invitations
   resources :payments, :except => [ :show ]
   resources :budget_items, :path => 'budget'
 
