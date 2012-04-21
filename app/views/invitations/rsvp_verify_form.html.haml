@@ -1,0 +1,9 @@
+= form_tag rsvp_verify_path, :class => 'form-horizontal' do
+  %fieldset
+    .control-group
+      =label_tag :passcode, "Enter your passcode:", :class => 'control-label'
+      .controls
+        .input-append
+          = text_field_tag :passcode, '', :class => 'span2', :size => 16
+          = button_tag 'RSVP', :class => 'btn', :type => :button
+

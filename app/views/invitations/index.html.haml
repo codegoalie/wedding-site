@@ -1,6 +1,8 @@
 .row
   .span1
-    =link_to "New Invitation", new_invitation_path
+    %ul.nav.nav-pills.nav-stacked
+      %li=link_to 'Generate from Guests', choose_invitations_path
+      %li=link_to "New Invitation", new_invitation_path
   .span11
     -if @invitations.any?
       %table.table.table-bordered.striped
@@ -8,6 +10,7 @@
           %tr
             %th Guest
             %th Passcode
+            %th RSVP Link
         %tbody
           =render(@invitations)
     -else

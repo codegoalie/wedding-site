@@ -39,6 +39,7 @@
             %li= link_to 'Registry', registry_path
             -if user_signed_in?
               %li= link_to 'Guests', guests_path
+              %li= link_to 'Invitations', invitations_path
               %li= link_to 'Budget', budget_items_path
         .span11
           -if @title

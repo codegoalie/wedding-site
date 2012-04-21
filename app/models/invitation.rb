@@ -8,6 +8,10 @@ class Invitation < ActiveRecord::Base
   attr_accessible :guest_id
   attr_readonly :passcode
 
+  def self.from_hash(id_hash)
+    Invitation.find(SimpleHasher.decode(id_hash))
+  end
+
   def id_hash
     SimpleHasher.encode(self.id) unless new_record?
   end
@@ -44,7 +48,7 @@ class Invitation < ActiveRecord::Base
       'partner', 'passionate', 'paternal', 
       'permanent', 'photograph', 'physical', 'precious', 'prize', 'protection', 
       'reading', 'reasonable', 'reasoning', 'reception', 
-      'recognition', 'regard', 'relationship', 'relative', 'religious', 'remembrance', 
+      'regard', 'relationship', 'relative', 'remembrance', 
       'reminiscent', 'respect', 'responsibility', 'responsible', 'revere', 'rice', 'ring', 
       'rite', 'role', 'model', 'romantic', 'service', 
       'sharing', 'show', 'shower', 'soiree', 'solemn', 'special', 

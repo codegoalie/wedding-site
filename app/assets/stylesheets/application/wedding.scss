@@ -6,5 +6,13 @@
   font-family: 'Delius', serif;
 }
 
+.clear {
+  clear:both;
+}
+
+.table tbody tr:hover {
+  cursor:pointer;
+}
+
 #main_content {
 }

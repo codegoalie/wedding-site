@@ -84,4 +84,33 @@ class InvitationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def choose
+    @title = "Populate Invitations"
+    @guests = Guest.all(:include => :invitation, :conditions => ["invitations.id is null"])
+  end
+
+  def populate
+    created = 0
+    params[:guests].each do |guest_id, i|
+      created += 1 if Invitation.create(:guest_id => guest_id)
+    end
+    flash[:success] = "Successfully created #{created} invitations."
+    redirect_to choose_invitations_path
+  end
+
+  def rsvp_verify_form
+    @invitation = Invitation.from_hash(params[:id_hash])
+    @title = "Welcome, #{@invitation.guest.name}!"
+  end
+
+  def rsvp_verify
+  end
+
+  def rsvp
+    @invitation = Invitation.from_hash(params[:id_hash])
+    @title = "Welcome, #{@invitation.guest.name}!"
+
+    render :rsvp, :layout => 'welcome'
+  end
 end

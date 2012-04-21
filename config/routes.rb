@@ -5,16 +5,27 @@ WeddingSite::Application.routes.draw do
     get '/signout', :to => 'devise/sessions#destroy', :as => 'sign_out'
   end
 
-  resources :guests, :meals, :attendees, :invitations
+  resources :guests, :meals, :attendees
+  resources :invitations do
+    collection do
+      get :choose
+      post :populate
+    end
+  end
   resources :payments, :except => [ :show ]
   resources :budget_items, :path => 'budget'
 
-
+ 
   match '/pics' => 'welcome#pics', :as => 'pics'
   match '/game' => 'welcome#game', :as => 'game'
   match '/info' => 'welcome#info', :as => 'info'
   match '/news' => 'welcome#news', :as => 'news'
   match '/registry' => 'welcome#registry', :as => 'registry'
+
+  get '/rsvp/:id_hash' => 'invitations#rsvp_verify_form', :as => 'rsvp_verify_form'
+  post '/rsvp/:id_hash' => 'invitations#rsvp_verify', :as => 'rsvp_verify'
+  get '/rsvp-select/:id_hash' => 'invitations#rsvp', :as => 'rsvp'
+  post '/rsvp-select/:id_hash' => 'invitations#rsvp_response', :as => 'rsvp_response'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
