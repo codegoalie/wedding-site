@@ -22,10 +22,9 @@ WeddingSite::Application.routes.draw do
   match '/news' => 'welcome#news', :as => 'news'
   match '/registry' => 'welcome#registry', :as => 'registry'
 
-  get '/rsvp/:id_hash' => 'invitations#rsvp_verify_form', :as => 'rsvp_verify_form'
-  post '/rsvp/:id_hash' => 'invitations#rsvp_verify', :as => 'rsvp_verify'
-  get '/rsvp-select/:id_hash' => 'invitations#rsvp', :as => 'rsvp'
-  post '/rsvp-select/:id_hash' => 'invitations#rsvp_response', :as => 'rsvp_response'
+  get '/rsvp/:id_hash' => 'rsvp#rsvp_verify_form', :as => 'rsvp_verify_form'
+  post '/rsvp/:id_hash' => 'rsvp#rsvp', :as => 'rsvp'
+  post '/rsvp-select/:id_hash' => 'rsvp#rsvp_response', :as => 'rsvp_response'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

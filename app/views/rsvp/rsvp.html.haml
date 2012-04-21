@@ -1,0 +1,46 @@
+= form_tag rsvp_response_path, :class => 'form-horizontal' do
+  .container
+    .row-fluid
+      .span11
+        .well
+          %h2 Can we count you in?
+          %br
+          .row-fluid.rsvp-row
+            .span6
+              .control-group
+                = label_tag :will_come_yes, 'I will be delighted to attend.', :class => 'control-label'
+                .controls
+                  = radio_button_tag :will_come, 'yes', :checked => true
+            .span5
+              .control-group
+                = label_tag :will_come_no, 'Unfortunately, I am unable to attend.', :class => 'control-label'
+                .controls
+                  = radio_button_tag :will_come, 'no', :checked => true
+    .row-fluid
+      .span5
+        %h2 Selections:
+        %br
+        -@invitation.guest.count.times do |i|
+          .control-group
+            = label_tag "names[#{i}]", 'Guest Name', :class => 'control-label'
+            .controls
+              = text_field_tag "names[#{i}]"
+          .control-group
+            = label_tag "meals[#{i}]", 'Meal Selection', :class => 'control-label'
+            .controls
+              = select_tag "meals[#{i}]", options_from_collection_for_select(Meal.all, :id, :title)
+          %hr
+
+      .span6
+        %h3 Menu:
+        %dl.dl-horizontal
+          -Meal.all.each do |meal|
+            %dt= meal.title
+            %dd= meal.description
+
+
+    .row-fluid
+      .span11
+        .form-actions
+          = submit_tag 'RSVP!', :class => "btn btn-primary"
+  

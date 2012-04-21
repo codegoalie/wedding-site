@@ -8,8 +8,13 @@ class Invitation < ActiveRecord::Base
   attr_accessible :guest_id
   attr_readonly :passcode
 
-  def self.from_hash(id_hash)
-    Invitation.find(SimpleHasher.decode(id_hash))
+  def self.from_hash(id_hash, passcode=nil)
+    id = SimpleHasher.decode(id_hash)
+    if passcode
+      Invitation.where(:id => id, :passcode => passcode).first
+    else
+      Invitation.find id
+    end
   end
 
   def id_hash

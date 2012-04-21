@@ -1,0 +1,14 @@
+.hero-unit
+  %h1 Thank you for RSVPing!
+  %p
+    Welcome to our online RSVP form. On the next page, you will be able to accept your 
+    invitation as well as make your meal selections. Please enter the passcode found on your 
+    invitation in the box below to get started!
+  = form_tag rsvp_path, :class => 'form-horizontal' do
+    %fieldset
+      .control-group
+        =label_tag :passcode, "Enter your passcode:", :class => 'control-label'
+        .controls
+          = text_field_tag :passcode
+          = submit_tag 'RSVP', :class => 'btn btn-primary btn-large', :style => 'margin-left:3em;'
+
