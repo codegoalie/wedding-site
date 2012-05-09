@@ -142,6 +142,7 @@ DEPENDENCIES
   devise
   haml-rails
   jquery-rails
+  less
   pg
   rails (= 3.2.3)
   rb-readline
