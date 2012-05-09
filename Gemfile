@@ -12,6 +12,7 @@ gem 'haml-rails'
 
 gem 'spreadsheet'
 gem 'simple-hasher'
+gem 'pg'
 
 
 # Gems used only for assets and not required
