@@ -1,4 +1,5 @@
 class InvitationsController < ApplicationController
+  layout 'invitation_inserts', :only => [ :inserts ]
   # GET /invitations
   # GET /invitations.json
   def index
@@ -97,6 +98,10 @@ class InvitationsController < ApplicationController
     end
     flash[:success] = "Successfully created #{created} invitations."
     redirect_to choose_invitations_path
+  end
+
+  def inserts
+    @invitations = Invitation.all
   end
 
 end

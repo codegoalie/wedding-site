@@ -2,14 +2,20 @@ require 'simplehasher'
 
 class Invitation < ActiveRecord::Base
   belongs_to :guest
-  
+  has_many :attendees
+
+  accepts_nested_attributes_for :attendees
+
   before_create :set_passcode
 
   attr_accessible :guest_id
   attr_readonly :passcode
 
+  OFFSET = 60
+
+
   def self.from_hash(id_hash, passcode=nil)
-    id = SimpleHasher.decode(id_hash)
+    id = SimpleHasher.decode(id_hash) / OFFSET
     if passcode
       Invitation.where(:id => id, :passcode => passcode).first
     else
@@ -18,7 +24,7 @@ class Invitation < ActiveRecord::Base
   end
 
   def id_hash
-    SimpleHasher.encode(self.id) unless new_record?
+    SimpleHasher.encode(self.id * OFFSET) unless new_record?
   end
 
   #private 

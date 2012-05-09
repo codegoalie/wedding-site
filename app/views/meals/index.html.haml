@@ -8,7 +8,7 @@
           %th Name
           %th Description
       %tbody
-        =render(@meals) || raw("You have not added any meals.<br/>Add a new one on the left.")
+        =render(@meals) || raw("<tr><td colspan=2>You have not added any meals.<br/>Add a new one on the left.</td></tr>")
 
 =content_for :javascript do
   :javascript

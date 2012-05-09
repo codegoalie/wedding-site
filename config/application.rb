@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'simplehasher'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -59,5 +60,8 @@ module WeddingSite
     config.generators do |g|
       g.template_engine :haml
     end
+
+    config.simple_hasher.allowed_chars = "HCM356"
+
   end
 end

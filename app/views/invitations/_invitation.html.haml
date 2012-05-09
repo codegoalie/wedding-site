@@ -1,4 +1,3 @@
 %tr{ :data => { 'invitation-id' => invitation.id } }
   %td= invitation.guest.name if invitation.guest
   %td= invitation.passcode
-  %td= link_to 'RSVP', rsvp_path(invitation.id_hash)

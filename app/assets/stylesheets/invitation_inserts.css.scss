@@ -1,0 +1,42 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_tree ./bootstrap
+ *= require_self
+*/
+
+@import 'partials/colors';
+@import 'partials/standards';
+@import 'partials/fonts';
+
+body {
+  width:8.5in;
+  padding:0;
+}
+.invitation_insert {
+  color:$malibu;
+  margin:0;
+  float:left;
+  width:3.8in;
+  height:2in;
+  border:1px solid #000;
+  padding:12px 0 0 0.2in;
+  font-size:12pt;
+
+  h1 {
+    font-size:30pt;
+  }
+
+  .name {
+    margin:0.3em 0 0.4em 0;
+    font-size:18pt;
+  }
+
+  .link, .passcode {
+    font-size:14pt;
+    padding:0.6em 0.6em 0.6em 2em;
+    font-weight:bold;
+  }
+
+}

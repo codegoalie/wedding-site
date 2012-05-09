@@ -9,6 +9,7 @@ WeddingSite::Application.routes.draw do
   resources :invitations do
     collection do
       get :choose
+      get :inserts
       post :populate
     end
   end

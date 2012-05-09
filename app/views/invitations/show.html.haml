@@ -1,7 +1,6 @@
 .row
   .span1
     %ul.nav.nav-list
-      %li= link_to 'Edit', edit_invitation_path(@invitation)
       %li= link_to 'Back', invitations_path
       %li.divider
       %li= link_to "Delete", invitation_path(@invitation), :method => :delete, :confirm => "You sure?"
@@ -16,4 +15,8 @@
         Passcode
       %dd
         =@invitation.passcode
-
+    %dl
+      %dt
+        RSVP Link
+      %dd
+        = link_to 'RSVP', rsvp_path(@invitation.id_hash)

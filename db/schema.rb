@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120417053355) do
 
   create_table "attendees", :force => true do |t|
-    t.integer "guest_id"
+    t.integer "invitation_id"
     t.string  "name"
     t.integer "meal_id"
   end
@@ -41,9 +41,10 @@ ActiveRecord::Schema.define(:version => 20120417053355) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "guest_id"
+    t.boolean  "attending",  :default => false
     t.string   "passcode"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "meals", :force => true do |t|

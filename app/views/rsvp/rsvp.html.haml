@@ -1,11 +1,38 @@
 = form_tag rsvp_response_path, :class => 'form-horizontal' do
   .container
     .row-fluid
+      .span11.center.rsvp-intro
+        .font-alegreya
+          Mr. and Mrs. Gary Facer
+          %br
+          Together with
+          %br
+          Mr. and Mrs. Roy Marshall
+          %br
+          Request the honor of your presence
+          %br
+          at the marriage of their children
+        .names.font-italianno
+          Hayley Alayne
+          %br
+          &
+          %br
+          Christopher Robert
+        .info.font-alegreya
+          Saturday, the 21st of July, 2012
+          %br
+          At three thirty in the afternoon
+          %br
+          %br
+          The Bertram
+          %br
+          600 North Aurora Road, Aurora Ohio 44202
+    .row-fluid
       .span11
         .well
           %h2 Can we count you in?
           %br
-          .row-fluid.rsvp-row
+          .row-fluid.rsvp-row.center
             .span6
               .control-group
                 = label_tag :will_come_yes, 'I will be delighted to attend.', :class => 'control-label'
@@ -15,12 +42,13 @@
               .control-group
                 = label_tag :will_come_no, 'Unfortunately, I am unable to attend.', :class => 'control-label'
                 .controls
-                  = radio_button_tag :will_come, 'no', :checked => true
+                  = radio_button_tag :will_come, 'no'
     .row-fluid
       .span5
         %h2 Selections:
         %br
-        -@invitation.guest.count.times do |i|
+
+        -@invitation.attendees.each_with_index do |attendee, i|
           .control-group
             = label_tag "names[#{i}]", 'Guest Name', :class => 'control-label'
             .controls

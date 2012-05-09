@@ -1,7 +1,7 @@
 class CreateAttendeeAndMealTables < ActiveRecord::Migration
   def self.up
     create_table :attendees do |t|
-      t.integer :guest_id
+      t.integer :invitation_id
       t.string :name
       t.integer :meal_id
     end
@@ -13,7 +13,7 @@ class CreateAttendeeAndMealTables < ActiveRecord::Migration
   end
 
   def self.down
-   #drop_table :attendees
-   #drop_table :meals
+   drop_table :attendees
+   drop_table :meals
   end
 end

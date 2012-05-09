@@ -1,0 +1,9 @@
+.invitation_insert.font-alegreya
+  %h1.font-great-vibes.center ...or RSVP Online!
+  .name #{invitation_insert.guest.name}, 
+  Simply go to 
+  .link
+    #{rsvp_url(invitation_insert.id_hash)}
+  and enter this passcode:
+  .passcode
+    #{invitation_insert.passcode}
