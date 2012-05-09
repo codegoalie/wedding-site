@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
   def index 
     @title = "Payments"
     @payments = Payment.includes(:budget_item).joins(:budget_item).
-      order('lower(budget_items.title)').all
+      order('lower(budget_items.title), paid_on').all
     @total = @payments.map{ |p| p.amount }.sum
   end
 
