@@ -20,6 +20,8 @@ WeddingSite::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  GA.tracker = 'UA-12130430-4'
+
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 

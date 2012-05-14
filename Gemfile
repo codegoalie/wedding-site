@@ -15,8 +15,9 @@ gem 'simple-hasher'
 gem 'pg'
 gem 'less'
 
+gem 'twitter-bootstrap-rails'
 
-  gem 'twitter-bootstrap-rails'
+gem 'google-analytics-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
