@@ -56,3 +56,4 @@
 
     =javascript_include_tag 'application'
     =yield :javascript
+    = analytics_init if Rails.env.production?
