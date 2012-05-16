@@ -1,5 +1,7 @@
 %p
   =link_to "New Guest", new_guest_path
+  %br
+  =link_to "Export Guest List", params.merge(:format => :csv)
 
 %p 
   Total Guests:

@@ -1,3 +1,5 @@
+require 'csv'
+
 class GuestsController < ApplicationController
   before_filter :authenticate_user!
 
@@ -8,10 +10,17 @@ class GuestsController < ApplicationController
     @guest_count = Guest.count
     respond_to do |format|
       format.html
-      format.xls {
-        send_data(render_xls(@guests),
-                 type: 'application/ms-excel', filename: 'guest_list.xls')
-      }
+      format.csv do
+        guest_csv = CSV.generate do |csv|
+          csv << [ 'Name', 'Address', 'City', 'State', 'Zip' ]
+
+          @guests.each do |g|
+            csv << [ g.name, g.address, g.city, g.state, g.zip ]
+          end
+        end
+        send_data(guest_csv, :type => 'text/csv', :filename => 'guestlist.csv')
+      end
+      format.json { render :json => @guests }
     end
   end
 
