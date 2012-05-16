@@ -3,12 +3,19 @@
   %head
     %title Invitation Inserts
     = stylesheet_link_tag 'invitation_inserts'
+    = stylesheet_link_tag 'invitation_inserts', :media => 'print'
 
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Montez'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Delius'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Great+Vibes'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Alegreya+SC'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Italianno'
+
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Montez', :media => 'print'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Delius', :media => 'print'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Great+Vibes', :media => 'print'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Alegreya+SC', :media => 'print'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Italianno', :media => 'print'
 
     =yield :header
   %body
