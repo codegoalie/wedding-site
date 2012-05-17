@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417053355) do
+ActiveRecord::Schema.define(:version => 20120517024339) do
 
   create_table "attendees", :force => true do |t|
     t.integer "invitation_id"
@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(:version => 20120417053355) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "count"
+    t.string   "friendly_name"
+    t.boolean  "and_guest",     :default => false
   end
 
   create_table "invitations", :force => true do |t|

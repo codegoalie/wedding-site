@@ -27,7 +27,8 @@ class Invitation < ActiveRecord::Base
     SimpleHasher.encode(self.id * OFFSET) unless new_record?
   end
 
-  #private 
+  private 
+
     def set_passcode
       self.passcode = "#{PASSCODE_WORDS.sample.capitalize}#{PASSCODE_WORDS.sample.capitalize}#{rand(899)+100}"
     end

@@ -11,6 +11,12 @@
       %td.first= f.label :name
       %td= f.text_field :name
     %tr
+      %td= f.label :friendly_name
+      %td
+        = f.text_field :friendly_name
+        = f.check_box :and_guest
+        = f.label :and_guest, :style => 'display:inline;'
+    %tr
       %td= f.label :email
       %td= f.email_field :email
     %tr

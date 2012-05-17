@@ -12,12 +12,14 @@
 %table
   %thead
     %th Name
+    %th Friendly Name
     %th Location
     %th Count
   %tbody
   -@guests.each do |guest|
     %tr
       %td= link_to guest.name, guest_path(guest)
+      %td= link_to guest.full_friendly_name, guest_path(guest)
       %td= link_to "#{guest.city}, #{guest.state}", guest_path(guest)
       %td= link_to guest.count, guest_path(guest)
 

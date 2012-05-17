@@ -12,13 +12,13 @@ class GuestsController < ApplicationController
       format.html
       format.csv do
         guest_csv = CSV.generate do |csv|
-          csv << [ 'Name', 'Address', 'City', 'State', 'Zip' ]
+          csv << [ 'Name', 'Friendly Name', 'Address', 'City', 'State', 'Zip' ]
 
           @guests.each do |g|
-            csv << [ g.name, g.address, g.city, g.state, g.zip ]
+            csv << [ g.name, g.full_friendly_name, g.address, g.city, g.state, g.zip ]
           end
         end
-        send_data(guest_csv, :type => 'text/csv', :filename => 'guestlist.csv')
+        send_data(guest_csv, :type => 'text/csv', :filename => 'guest_list.csv')
       end
       format.json { render :json => @guests }
     end

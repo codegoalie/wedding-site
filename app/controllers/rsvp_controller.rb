@@ -28,5 +28,9 @@ class RsvpController < ApplicationController
 
   def rsvp_response
     @invitation = Invitation.from_hash(params[:id_hash])
+
+   #Pony.mail(
+   #  :to => User.all.map(&:id).join(','),
+   #)
   end
 end
