@@ -1,12 +1,18 @@
-= link_to "Back to Guest List", guests_path
+%p
+  = link_to "Back to Guest List", guests_path
+%h3
+  = @guest.full_friendly_name
 %p
   #{@guest.email}
   %br
   #{@guest.address}
   %br
   #{@guest.city}, #{@guest.state} #{@guest.zip}
-  %br
+%p
   Guests Attending: #{@guest.count}
+  %br
+  And Guest?
+  = @guest.and_guest ? 'Yes' : 'No'
 
 =link_to "Edit", edit_guest_path(@guest)
 =link_to "Delete", guest_path(@guest), :confirm => "Are you sure?", :method => 'delete'
