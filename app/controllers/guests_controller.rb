@@ -51,7 +51,7 @@ class GuestsController < ApplicationController
   def update
     @guest = Guest.find params[:id]
     if @guest.update_attributes(params[:guest])
-      redirect_to @guest, :notice => "Guest was successfully updated."
+      redirect_to guests_path, :notice => "#{@guest.friendly_name} was successfully updated."
     else
       render :action => :edit
     end
