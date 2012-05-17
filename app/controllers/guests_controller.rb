@@ -61,7 +61,7 @@ class GuestsController < ApplicationController
     @guest = Guest.find(params[:id])
     @guest.destroy
 
-    redirect_to guests_path
+    redirect_to guests_path, :notice => "#{@guest.friendly_name} was successfully deleted."
   end
 
   private
