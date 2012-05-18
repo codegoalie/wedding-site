@@ -1,0 +1,20 @@
+.hero-unit
+  -if @invitation.attending
+    %h2 We look forward to seeing you at the wedding! :)
+    %br
+    %p
+      Please visit the 
+      = link_to "information page", info_path
+      for details on reserving your hotel room at 
+      = link_to 'The Bertram', 'http://www.thebertraminn.com/'
+      under the Marshall/Facer rate!
+    %p
+      If you have anyother questions, please email us at 
+      = mail_to 'chris@chrismar035.com'
+  -else
+    %h2 We are sorry that you can't make it... :(
+    %br
+    %p Hopefully we can see you soon!
+    %p
+      Feel free to drop us a line at
+      = mail_to 'chris@chrismar035.com'

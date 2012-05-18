@@ -1,0 +1,10 @@
+%h1 
+  #{@invitation.guest.full_friendly_name} will 
+  -if @invitation.attending
+    be attending!!!
+  -else
+    not be attending.
+
+%p
+  We are up to #{@attending} RSVPed as attending out of 
+  #{@total_invited} and #{@percent_reporting}% RSVPed so far.

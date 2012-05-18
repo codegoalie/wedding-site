@@ -9,7 +9,7 @@
       %dt
         Guest
       %dd
-        =@invitation.guest_id
+        = link_to @invitation.guest.full_friendly_name, guest_path(@invitation.guest)
     %dl
       %dt
         Passcode

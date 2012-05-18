@@ -26,6 +26,7 @@ WeddingSite::Application.routes.draw do
   get '/rsvp/:id_hash' => 'rsvp#rsvp_verify_form', :as => 'rsvp_verify_form'
   post '/rsvp/:id_hash' => 'rsvp#rsvp', :as => 'rsvp'
   post '/rsvp-select/:id_hash' => 'rsvp#rsvp_response', :as => 'rsvp_response'
+  #get '/rsvp/:id_hash/response_test' => 'rsvp#response_test'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

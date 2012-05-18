@@ -28,9 +28,32 @@ class RsvpController < ApplicationController
 
   def rsvp_response
     @invitation = Invitation.from_hash(params[:id_hash])
+    will_come = params[:will_come] == 'yes'
 
-   #Pony.mail(
-   #  :to => User.all.map(&:id).join(','),
-   #)
+    if will_come
+      params[:names].each_with_index do |n, i|
+        @invitation.attendees << Attendee.new(:name => params[:names][i], :meal_id => params[:meals][i])
+      end
+    end
+
+    @invitation.attending = will_come
+
+    if @invitation.save
+      RsvpMailer.rsvped(@invitation).deliver
+      @title = 'Thank you for RSVPing!!!'
+    else
+      @guest = @invitation.guest
+      (@guest.count - @invitation.attendees.count).times { @invitation.attendees.build }
+      @title = "Welcome, #{@invitation.guest.name}!"
+      render :rsvp
+    end
   end
+
+ #def response_test
+ #  @invitation = Invitation.from_hash(params[:id_hash])
+ #  @invitation.attending = false
+ #  @title = 'Thank you for RSVPing!!!'
+
+ #  render 'rsvp_response'
+ #end
 end
