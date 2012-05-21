@@ -63,7 +63,7 @@ module WeddingSite
       g.template_engine :haml
     end
 
-    config.simple_hasher.allowed_chars = "HCM356"
+    config.simple_hasher.allowed_chars = "hcm356"
 
   end
 end

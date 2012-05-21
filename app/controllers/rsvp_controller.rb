@@ -1,6 +1,8 @@
 class RsvpController < ApplicationController
   layout 'welcome'
 
+  before_filter :downcase_id_hash
+
   def rsvp_verify_form
     @invitation = Invitation.from_hash(params[:id_hash])
     if @invitation
@@ -56,4 +58,12 @@ class RsvpController < ApplicationController
 
  #  render 'rsvp_response'
  #end
+
+ private 
+
+ def downcase_id_hash
+   params[:id_hash] = params[:id_hash].downcase if params[:id_hash]
+   puts params[:id_hash]
+ end
 end
+
