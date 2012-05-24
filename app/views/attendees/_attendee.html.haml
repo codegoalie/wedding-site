@@ -1,5 +1,5 @@
 %tr{ :data => { 'attendee-id' => attendee.id}}
   %td= attendee.name
-  %td=attendee.guest.name if attendee.guest
-  %td=attendee.meal.title if attendee.meal
+  %td= link_to(attendee.guest_name, guest_path(attendee.invitation.guest)) if attendee.guest_name
+  %td=attendee.meal_title
     

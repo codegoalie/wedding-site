@@ -11,6 +11,8 @@ class Invitation < ActiveRecord::Base
   attr_accessible :guest_id
   attr_readonly :passcode
 
+  delegate :name,  to: :guest, prefix: true, allow_nil: true
+
   OFFSET = 60
 
 
