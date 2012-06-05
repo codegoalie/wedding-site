@@ -2,12 +2,16 @@
   .span1
     =link_to "New Attendee", new_attendee_path
   .span11
+    %h4 #{@attending} attending
+    %h5 #{@not_attending} not attending
+    %h6 #{@percent_reporting}% reporting (of #{@total_invited} invited)
+    %br
     -if @attendees.any?
       %table.table.table-bordered.striped
         %thead
           %tr
+            %th Attendee
             %th Guest
-            %th Name
             %th Meal
         %tbody
           =render(@attendees)

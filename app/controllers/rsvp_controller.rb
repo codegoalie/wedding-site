@@ -34,7 +34,7 @@ class RsvpController < ApplicationController
 
     if will_come
       params[:names].each_with_index do |n, i|
-        @invitation.attendees << Attendee.new(:name => params[:names][i], :meal_id => params[:meals][i])
+        @invitation.attendees << Attendee.new(:name => params['names'][i.to_s], :meal_id => params['meals'][i.to_s])
       end
     end
 

@@ -9,19 +9,20 @@
 
     %tr
       %td
-        = f.label :guest_id
-      %td
-        = f.number_field :guest_id
-        %tr
-      %td
         = f.label :name
       %td
         = f.text_field :name
-        %tr
+    %tr
+    %tr
+      %td
+        = f.label :invitation
+      %td
+        = f.select :invitation_id, options_from_collection_for_select(Invitation.all, :id, 'guest_name', :invitation_id)
+    %tr
       %td
         = f.label :meal_id
       %td
-        = f.number_field :meal_id
+        = f.select :meal_id, options_from_collection_for_select(Meal.all, :id, 'title', :meal_id)
         
 
     %tr

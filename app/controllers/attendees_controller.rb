@@ -4,6 +4,11 @@ class AttendeesController < ApplicationController
   def index
     @attendees = Attendee.all
 
+    @total_invited = Invitation.joins(:guest).sum('guests.count')
+    @attending = @attendees.size
+    @not_attending = Invitation.where(:attending => false).where('invitations.created_at <> invitations.updated_at').joins(:guest).sum('guests.count').to_i
+    @percent_reporting = (1.0 * (@attending.to_i + @not_attending.to_i) / @total_invited.to_i).round(2) * 100
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @attendees }
