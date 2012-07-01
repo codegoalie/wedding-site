@@ -1,6 +1,7 @@
 class BudgetItemsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_budget_item_types, :except => [ :index, :delete, :show ]
+  protect_from_forgery :except => :delete
 
   def index
     @title = "Budget"
