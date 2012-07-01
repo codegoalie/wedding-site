@@ -1,5 +1,6 @@
 class AttendeesController < ApplicationController
   before_filter :authenticate_user!
+  protect_from_forgery :except => :destroy
 
   # GET /attendees
   # GET /attendees.json
