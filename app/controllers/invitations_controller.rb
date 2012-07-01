@@ -1,5 +1,6 @@
 class InvitationsController < ApplicationController
   layout 'invitation_inserts', :only => [ :inserts ]
+  before_filter :authenticate_user!
   # GET /invitations
   # GET /invitations.json
   def index

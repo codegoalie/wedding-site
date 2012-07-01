@@ -1,4 +1,6 @@
 class AttendeesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /attendees
   # GET /attendees.json
   def index
