@@ -13,7 +13,6 @@
       %td
         = f.text_field :name, tabindex: 1
     %tr
-      %tr
       %td
         = f.label :invitation
       %td
@@ -22,12 +21,12 @@
       %td
         = f.label :meal_id
       %td
-        = f.select :meal_id, options_from_collection_for_select(Meal.all, :id, 'title', :meal_id)
+        = f.select :meal_id, options_from_collection_for_select(Meal.all, :id, 'title', :meal_id), {}, tabindex: 3
         
 
     %tr
       %td{ :colspan => 2}
-        = f.submit 'Save'
+        = f.submit 'Save', tabindex: 4
         -unless @attendee.new_record?
           =link_to 'Cancel', @attendee
 

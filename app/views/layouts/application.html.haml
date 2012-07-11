@@ -2,8 +2,8 @@
 %html
   %head
     %title 
-      -if @title
-        =@title
+      -if content_for?(:title)
+        = yield :title
         |
       Crayley: for officials
     = favicon_link_tag
@@ -21,15 +21,14 @@
           %a.brand{ :href => '/' }
             Hayley Facer & Christopher Marshall
           %ul.nav
-            %li= link_to 'Home', root_path
-            %li= link_to 'Info', info_path
-            %li= link_to 'Pics', pics_path
-            %li= link_to 'Game', game_path
-            %li= link_to 'Registry', registry_path
             -if user_signed_in?
               %li= link_to 'Guests', guests_path
               %li= link_to 'Invitations', invitations_path
+              %li= link_to 'Attendees', attendees_path
               %li= link_to 'Budget', budget_items_path
+              %li= link_to 'Menu', meals_path
+            -else
+              %li= link_to 'Home', root_path
           %ul.nav.pull-right
             -if user_signed_in?
               %li=link_to current_user.email, sign_out_path
@@ -38,7 +37,9 @@
               %li=link_to 'Sign In', sign_in_path
     .container-fluid
       .page-header
-        %h1= @title if @title
+        %h1
+          = @title if @title
+          = yield :title
       .row
         .span6
           -if notice

@@ -15,7 +15,9 @@
       %dt
         Guest Name
       %dd
-        =@attendee.guest_name
+        = link_to(guest_path(@attendee.guest)) do
+          =@attendee.guest_name
+          (#{@attendee.guest_friendly_name})
     %dl
       %dt
         Meal

@@ -16,6 +16,7 @@ class Invitation < ActiveRecord::Base
   attr_readonly :passcode
 
   delegate :name,  to: :guest, prefix: true, allow_nil: true
+  delegate :friendly_name,  to: :guest, prefix: true, allow_nil: true
 
   def self.from_hash(id_hash, passcode=nil)
     id = SimpleHasher.decode(id_hash) / OFFSET
