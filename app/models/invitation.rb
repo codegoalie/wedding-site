@@ -1,6 +1,8 @@
 require 'simplehasher'
 
 class Invitation < ActiveRecord::Base
+  OFFSET = 60
+
   belongs_to :guest
   has_many :attendees
 
@@ -8,13 +10,12 @@ class Invitation < ActiveRecord::Base
 
   before_create :set_passcode
 
+  scope :with_attendees_remaining, joins('left join guests on guests.id = invitations.guest_id', 'left join (select invitation_id, count(*) as attendee_count from attendees group by invitation_id)attendees on attendees.invitation_id = invitations.id').where('guests.count > coalesce(attendee_count,0)')
+
   attr_accessible :guest_id
   attr_readonly :passcode
 
   delegate :name,  to: :guest, prefix: true, allow_nil: true
-
-  OFFSET = 60
-
 
   def self.from_hash(id_hash, passcode=nil)
     id = SimpleHasher.decode(id_hash) / OFFSET
@@ -27,6 +28,15 @@ class Invitation < ActiveRecord::Base
 
   def id_hash
     SimpleHasher.encode(self.id * OFFSET) unless new_record?
+  end
+
+  def guest_name_with_remainaing_count
+    left = guest.count - attendees.count
+    if left > 0
+      "#{guest.name} (#{left})"
+    else
+      guest.name
+    end
   end
 
   private 

@@ -10,7 +10,7 @@ class AttendeesController < ApplicationController
     @total_invited = Invitation.joins(:guest).sum('guests.count')
     @attending = @attendees.size
     @not_attending = Invitation.where(:attending => false).where('invitations.created_at <> invitations.updated_at').joins(:guest).sum('guests.count').to_i
-    @percent_reporting = (1.0 * (@attending.to_i + @not_attending.to_i) / @total_invited.to_i).round(4) * 100
+    @percent_reporting = ((1.0 * (@attending.to_i + @not_attending.to_i) / @total_invited.to_i) * 100).round
 
     respond_to do |format|
       format.html # index.html.erb
@@ -52,7 +52,7 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       if @attendee.save
-        format.html { redirect_to @attendee, success: 'Attendee was successfully created.' }
+        format.html { redirect_to attendees_path, flash: { success: "#{@attendee.name} was successfully created." } }
         format.json { render json: @attendee, status: :created, location: @attendee }
       else
         format.html { render action: "new" }
@@ -68,7 +68,7 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       if @attendee.update_attributes(params[:attendee])
-        format.html { redirect_to @attendee, success: 'Attendee was successfully updated.' }
+        format.html { redirect_to @attendee, flash: { success: "#{@attendee.name} was successfully updated." } }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

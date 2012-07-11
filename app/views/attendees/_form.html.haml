@@ -13,12 +13,12 @@
       %td
         = f.text_field :name
     %tr
-    %tr
+      %tr
       %td
         = f.label :invitation
       %td
-        = f.select :invitation_id, options_from_collection_for_select(Invitation.all, :id, 'guest_name', :invitation_id)
-    %tr
+        = f.select :invitation_id, options_from_collection_for_select(Invitation.with_attendees_remaining, :id, 'guest_name_with_remainaing_count', :invitation_id)
+    %tr{ style: 'height:50px;' }
       %td
         = f.label :meal_id
       %td
@@ -31,3 +31,8 @@
         -unless @attendee.new_record?
           =link_to 'Cancel', @attendee
 
+=content_for :javascript do
+  :javascript
+    $(function() {
+      $("#attendee_invitation_id").select2();
+    });

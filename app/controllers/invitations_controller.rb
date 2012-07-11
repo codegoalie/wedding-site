@@ -66,7 +66,7 @@ class InvitationsController < ApplicationController
 
     respond_to do |format|
       if @invitation.update_attributes(params[:invitation])
-        format.html { redirect_to @invitation, success: 'Invitation was successfully updated.' }
+        format.html { redirect_to @invitation, flash: { success: 'Invitation was successfully updated.' } }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
