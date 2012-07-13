@@ -1,6 +1,6 @@
 class PerPersonBudgetItem < BudgetItem
   
   def units
-    Guest.sum(:count)
+    Attendee.count
   end
 end
