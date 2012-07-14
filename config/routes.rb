@@ -5,7 +5,7 @@ WeddingSite::Application.routes.draw do
     get '/signout', :to => 'devise/sessions#destroy', :as => 'sign_out'
   end
 
-  resources :guests, :meals, :attendees
+  resources :guests, :meals
   resources :invitations do
     collection do
       get :choose
@@ -15,6 +15,11 @@ WeddingSite::Application.routes.draw do
   end
   resources :payments, :except => [ :show ]
   resources :budget_items, :path => 'budget'
+  resources :attendees do
+    collection do
+      get :seating_chart
+    end
+  end
 
  
   match '/pics' => 'welcome#pics', :as => 'pics'

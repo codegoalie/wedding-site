@@ -4,4 +4,5 @@
 //= require jquery
 //= require twitter/bootstrap
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require select2.min

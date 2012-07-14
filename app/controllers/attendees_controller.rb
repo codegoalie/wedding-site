@@ -1,6 +1,6 @@
 class AttendeesController < ApplicationController
   before_filter :authenticate_user!
-  protect_from_forgery :except => :destroy
+  protect_from_forgery :except => :update
 
   # GET /attendees
   # GET /attendees.json
@@ -86,6 +86,14 @@ class AttendeesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to attendees_url }
       format.json { head :no_content }
+    end
+  end
+
+  def seating_chart
+    table_numbers = Attendee.select('distinct table_number').map(&:table_number)
+    @attendees_by_table = {}
+    table_numbers.each do |table_number| 
+      @attendees_by_table[table_number] = Attendee.where(table_number: table_number).order(:id)
     end
   end
 end

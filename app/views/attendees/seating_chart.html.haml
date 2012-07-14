@@ -1,0 +1,42 @@
+=content_for :title do
+  Seating Chart
+
+.row-fluid
+  - col_size = 12 / (@attendees_by_table.size + 1) 
+  - @attendees_by_table.each do |table_number, attendees|
+    %div{ class: "span#{col_size}"} 
+      %h1= table_number ? "Table #{table_number}" : "Standing Room Only"
+      %ul{ id: "sortable#{table_number}", class: 'connectedSortable unstyled', data: { table_number: table_number} }
+        - attendees.each do |attendee|
+          %li.ui-state-default{ data: { id: attendee.id }} 
+            #{attendee.name} (#{attendee.guest_friendly_name})
+
+  %div{ class: "span#{col_size}"}
+    %h1 Table #{@attendees_by_table.size}
+    %ul{ id: "sortable#{@attendees_by_table.size}", class: 'connectedSortable unstyled', data: { table_number: @attendees_by_table.size } }
+
+
+= content_for :javascript do
+  :javascript
+    var evt, eui;
+    $(function() {
+      $(".connectedSortable").sortable({
+        connectWith: ".connectedSortable",
+        dropOnEmpty: true,
+        receive: function(event, ui) {
+          evt = event;
+          eui = ui;
+          var new_table_number = $(ui.item[0].parentElement).data('table_number');
+          var attendee_id = $(ui.item[0]).data('id');
+          if(new_table_number == undefined) new_table_number = '';
+          console.log("New Table: " + new_table_number + " for " + attendee_id);
+          $.ajax({
+            url: "/attendees/" + attendee_id,
+            data: { 'attendee[table_number]': new_table_number },
+            type: 'PUT',
+            dataType: 'json'
+          });
+        },
+      });
+    });
+
