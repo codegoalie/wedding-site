@@ -20,7 +20,7 @@ class GuestsController < ApplicationController
         end
         send_data(guest_csv, :type => 'text/csv', :filename => 'guest_list.csv')
       end
-      format.json { render :json => Guest.all }
+      format.json { render :json => Guest.order(:id) }
     end
   end
 

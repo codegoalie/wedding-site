@@ -12,7 +12,7 @@ class Invitation < ActiveRecord::Base
 
   scope :with_attendees_remaining, joins('left join guests on guests.id = invitations.guest_id', 'left join (select invitation_id, count(*) as attendee_count from attendees group by invitation_id)attendees on attendees.invitation_id = invitations.id').where('guests.count > coalesce(attendee_count,0)')
 
-  attr_accessible :guest_id
+  attr_accessible :guest_id, :attending
   attr_readonly :passcode
 
   delegate :name,  to: :guest, prefix: true, allow_nil: true
