@@ -5,7 +5,7 @@ class AttendeesController < ApplicationController
   # GET /attendees
   # GET /attendees.json
   def index
-    @attendees = Attendee.all
+    @attendees = Attendee.order(:id)
 
     @total_invited = Invitation.joins(:guest).sum('guests.count')
     @attending = @attendees.size
@@ -14,7 +14,7 @@ class AttendeesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @attendees }
+      format.json { render json: @attendee }
     end
   end
 

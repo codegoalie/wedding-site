@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517024339) do
+ActiveRecord::Schema.define(:version => 20120714153804) do
 
   create_table "attendees", :force => true do |t|
     t.integer "invitation_id"
     t.string  "name"
     t.integer "meal_id"
+    t.string  "note"
   end
 
   create_table "budget_items", :force => true do |t|
@@ -34,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20120517024339) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "count"
     t.string   "friendly_name"
     t.boolean  "and_guest",     :default => false
@@ -62,18 +63,18 @@ ActiveRecord::Schema.define(:version => 20120517024339) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                         :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

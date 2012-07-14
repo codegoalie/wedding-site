@@ -24,3 +24,8 @@
       %dd
         =@attendee.meal_title
 
+    - unless @attendee.note.blank?
+      %dl
+        %dt Note
+        %dd= @attendee.note
+
