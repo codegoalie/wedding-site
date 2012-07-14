@@ -23,7 +23,7 @@
       %td
         = f.label :meal_id
       %td
-        = f.select :meal_id, options_from_collection_for_select(Meal.all, :id, 'title', :meal_id), {}, tabindex: 3
+        = f.select :meal_id, options_from_collection_for_select(Meal.all, :id, 'title', @attendee.meal_id), {}, tabindex: 3
     %tr
       %td
         = f.label :note
