@@ -40,6 +40,10 @@ class Invitation < ActiveRecord::Base
     end
   end
 
+  def attendees_remaining?
+    guest.count != attendees.count
+  end
+
   private 
 
     def set_passcode

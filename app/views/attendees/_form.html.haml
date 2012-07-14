@@ -16,7 +16,9 @@
       %td
         = f.label :invitation
       %td
-        = f.select :invitation_id, options_from_collection_for_select(Invitation.with_attendees_remaining, :id, 'guest_name_with_remainaing_count', :invitation_id)
+        -options = Invitation.with_attendees_remaining
+        -options << @attendee.invitation unless @attendee.new_record? || @attendee.invitation.attendees_remaining?
+        = f.select :invitation_id, options_from_collection_for_select(options, :id, 'guest_name_with_remainaing_count', @attendee.invitation_id)
     %tr{ style: 'height:50px;' }
       %td
         = f.label :meal_id
