@@ -1,19 +1,31 @@
 =content_for :title do
-  Seating Chart
+  Hayley & Chris, party of #{Attendee.count}
 
 .row-fluid
-  - col_size = 12 / (@attendees_by_table.size + 1) 
-  - @attendees_by_table.each do |table_number, attendees|
-    %div{ class: "span#{col_size}"} 
-      %h1= table_number ? "Table #{table_number}" : "Standing Room Only"
-      %ul{ id: "sortable#{table_number}", class: 'connectedSortable unstyled', data: { table_number: table_number} }
-        - attendees.each do |attendee|
-          %li.ui-state-default{ data: { id: attendee.id }} 
-            #{attendee.name} (#{attendee.guest_friendly_name})
+  .span12
+    =link_to "Meal Stats", table_stats_attendees_path
+.row-fluid
+  .span12
+    - @attendees_by_table.each do |table_number, attendees|
+      %div{ class: "span1"} 
+        %h1
+          #{table_number ? "#{table_number} " : "Head Table"}
+        (
+        %span.count><
+          #{attendees.size}
+        )
+        %ul{ id: "sortable#{table_number}", class: 'connectedSortable unstyled', data: { table_number: table_number} }
+          - attendees.each do |attendee|
+            %li.ui-state-default{ data: { id: attendee.id }, title: attendee.guest_friendly_name } 
+              #{attendee.name}
 
-  %div{ class: "span#{col_size}"}
-    %h1 Table #{@attendees_by_table.size}
-    %ul{ id: "sortable#{@attendees_by_table.size}", class: 'connectedSortable unstyled', data: { table_number: @attendees_by_table.size } }
+    %div{ class: "span1"}
+      %h1 
+        #{@attendees_by_table.size}
+      (
+      %span.count>< 0
+      )
+      %ul{ id: "sortable#{@attendees_by_table.size}", class: 'connectedSortable unstyled', data: { table_number: @attendees_by_table.size } }
 
 
 = content_for :javascript do
@@ -24,18 +36,23 @@
         connectWith: ".connectedSortable",
         dropOnEmpty: true,
         receive: function(event, ui) {
-          evt = event;
-          eui = ui;
+          var table_counter = $(event.target).siblings('span.count');
+          table_counter.html(parseInt(table_counter.html()) + 1);
           var new_table_number = $(ui.item[0].parentElement).data('table_number');
           var attendee_id = $(ui.item[0]).data('id');
           if(new_table_number == undefined) new_table_number = '';
-          console.log("New Table: " + new_table_number + " for " + attendee_id);
           $.ajax({
             url: "/attendees/" + attendee_id,
             data: { 'attendee[table_number]': new_table_number },
             type: 'PUT',
             dataType: 'json'
           });
+        },
+        remove: function(event, ui) {
+          evt = event;
+          eui = ui;
+          var table_counter = $(event.target).siblings('span.count');
+          table_counter.html(parseInt(table_counter.html()) - 1);
         },
       });
     });

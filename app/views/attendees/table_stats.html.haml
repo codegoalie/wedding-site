@@ -1,0 +1,35 @@
+=content_for :title do
+  Table Stats
+
+.row-fluid
+  .span2
+    -current_table = -1
+    -@table_and_meal_counts.each do |k, count|
+      -unless k[0] == current_table
+        %br
+        %br
+        %h2= (k[0] ? "Table #{k[0]}" : "Head Table")
+        - current_table = k[0]
+
+      - meal = Meal.find(k[1])
+      #{meal.title} - #{count}
+      %br
+
+  .span10
+    -current_table = -1
+    -current_invitation = -1
+    -@meals_by_invitation_by_table.each do |k, count|
+      -unless k[0] == current_table
+        %br
+        %br
+        %h2= (k[0] ? "Table #{k[0]}" : "Head Table")
+        - current_table = k[0]
+
+      -unless k[1] == current_invitation
+        -invite = Invitation.find(k[1])
+        %h3= invite.attendees.first.table_plaque_name(current_table)
+        - current_invitation = k[1]
+
+      - meal = Meal.find(k[2])
+      #{meal.title} - #{count}
+      %br

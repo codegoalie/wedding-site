@@ -21,9 +21,12 @@ ul.connectedSortable {
   background:$malibu;
   min-height:20px;
   padding:5px 0;
+  font-size:8pt;
 
   li {
     margin:5px;
     padding:5px 10px;
+    font-size:8pt;
+    cursor:pointer;
   }
 }

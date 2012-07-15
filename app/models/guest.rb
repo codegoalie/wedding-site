@@ -10,4 +10,11 @@ class Guest < ActiveRecord::Base
 
     full_name
   end
+
+  def full_name
+    full_name = self.name
+    full_name << " and Guest" if self.and_guest
+
+    full_name
+  end
 end

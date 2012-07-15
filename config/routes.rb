@@ -18,6 +18,7 @@ WeddingSite::Application.routes.draw do
   resources :attendees do
     collection do
       get :seating_chart
+      get :table_stats
     end
   end
 

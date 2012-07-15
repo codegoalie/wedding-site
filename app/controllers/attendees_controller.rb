@@ -15,6 +15,18 @@ class AttendeesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @attendee }
+      format.csv do
+        attendee_csv = CSV.generate do |csv|
+          csv << [ 'Name', 'Table Number' ]
+
+          Attendee.guests_by_table.each do |table_hash|
+            table_hash[1].each do |name|
+              csv << [ name, table_hash[0] ]
+            end
+          end
+        end
+        send_data(attendee_csv, :type => 'text/csv', :filename => 'attendee_list.csv')
+      end
     end
   end
 
@@ -90,10 +102,15 @@ class AttendeesController < ApplicationController
   end
 
   def seating_chart
-    table_numbers = Attendee.select('distinct table_number').map(&:table_number)
+    table_numbers = Attendee.select('distinct table_number').order(:table_number).map(&:table_number)
     @attendees_by_table = {}
     table_numbers.each do |table_number| 
       @attendees_by_table[table_number] = Attendee.where(table_number: table_number).order(:id)
     end
+  end
+
+  def table_stats
+    @table_and_meal_counts = Attendee.group(:table_number, :meal_id).order(:table_number, :meal_id).count
+    @meals_by_invitation_by_table =  Attendee.group(:table_number, :invitation_id, :meal_id).order(:table_number, :invitation_id, :meal_id).count
   end
 end

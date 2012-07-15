@@ -19,7 +19,7 @@ class PaymentsController < ApplicationController
 
     if @payment.save
       flash[:success] = 'Payment saved.'
-      redirect_to payments_path
+      redirect_to budget_items_path
     else
       @title = "New Payment"
       render 'new'
@@ -36,7 +36,7 @@ class PaymentsController < ApplicationController
 
     if @payment.update_attributes(params[:payment])
       flash[:success] = 'Payment saved.'
-      redirect_to payments_path
+      redirect_to budget_items_path
     else
       @title = 'Edit Payment'
       render 'edit'

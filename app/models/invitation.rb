@@ -15,8 +15,10 @@ class Invitation < ActiveRecord::Base
   attr_accessible :guest_id, :attending
   attr_readonly :passcode
 
-  delegate :name,  to: :guest, prefix: true, allow_nil: true
-  delegate :friendly_name,  to: :guest, prefix: true, allow_nil: true
+  delegate :name, to: :guest, prefix: true, allow_nil: true
+  delegate :full_name, to: :guest, prefix: true, allow_nil: true
+  delegate :friendly_name, to: :guest, prefix: true, allow_nil: true
+  delegate :full_friendly_name, to: :guest, prefix: true, allow_nil: true
 
   def self.from_hash(id_hash, passcode=nil)
     id = SimpleHasher.decode(id_hash) / OFFSET
