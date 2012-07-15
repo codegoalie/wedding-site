@@ -110,6 +110,7 @@ class AttendeesController < ApplicationController
   end
 
   def table_stats
+    @meal_totals = Attendee.group(:meal_id).order('count(*) desc').count
     @table_and_meal_counts = Attendee.group(:table_number, :meal_id).order(:table_number, :meal_id).count
     @meals_by_invitation_by_table =  Attendee.group(:table_number, :invitation_id, :meal_id).order(:table_number, :invitation_id, :meal_id).count
   end

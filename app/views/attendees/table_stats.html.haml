@@ -2,6 +2,19 @@
   Table Stats
 
 .row-fluid
+  .span12
+    %h2 Meal Totals
+    %table
+      %thead
+        %th Meal
+        %th Count
+      %tbody
+        -@meal_totals.each do |meal_id, count|
+          %tr
+            %td= Meal.find(meal_id).title
+            %td{ style: 'text-align:right' }= count
+
+.row-fluid
   .span2
     -current_table = -1
     -@table_and_meal_counts.each do |k, count|
@@ -28,6 +41,11 @@
       -unless k[1] == current_invitation
         -invite = Invitation.find(k[1])
         %h3= invite.attendees.first.table_plaque_name(current_table)
+        - invite.attendees.each do |a|
+          - unless a.note.blank?
+            %ul
+              %li= a.note
+
         - current_invitation = k[1]
 
       - meal = Meal.find(k[2])
